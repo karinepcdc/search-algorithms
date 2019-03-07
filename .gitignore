@@ -1,0 +1,12 @@
+# Emacs backup file
+*~
+
+# Thumbnail database of Mac OS X
+.DS_Store
+
+# Compiled Object files
+*.o
+
+# Executables
+*.exe
+*.out

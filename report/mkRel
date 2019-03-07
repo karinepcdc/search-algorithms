@@ -1,0 +1,17 @@
+# script to run latex on relatorio.tex and generate a pdf file with correct figures
+#how to use a script:
+#in the first time do at the promt: $chmod -x mkrelatorio
+#then: bash mkrelatorio
+
+rm report.aux
+
+pdflatex report.tex
+#bibtex report
+pdflatex report.tex
+pdflatex report.tex #just to be sure the cross reference will be right!
+
+rm report.aux report.log report.bbl report.blg  report.toc
+
+
+# epstopdf myfigure.eps (to generate myfigure.pdf) 
+

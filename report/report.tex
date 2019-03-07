@@ -1,0 +1,159 @@
+\documentclass[12pt,openright]{report}
+\pagestyle{headings}
+\usepackage{layout} 
+\usepackage[left=1.4in, right=1.0in, top=1.2in, bottom=1.2in]{geometry} %page margin
+
+
+\usepackage[utf8]{inputenc}
+%\usepackage[brazil]{babel}
+%\usepackage{biblatex} %Bibliografia. Cita sites
+\usepackage{url}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[latin1]{inputenc} -> separação de silabas
+
+
+%\usepackage{pslatex} %Times New Roman Font 
+\usepackage{fontenc}
+\usepackage{verbatim} %inclui comentários em blocos
+\usepackage{indentfirst} %primeiro paragrado identado
+
+%%%%%%%%%%%%%%%%%%%% simbolos matematicos
+\usepackage[intlimits]{amsmath} %limites do lim ficam embaixo!
+\usepackage{amsthm, amssymb} 
+%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% fontes matematicas
+\usepackage{amsfonts, mathrsfs} 
+%\usepackage{bbold} % modifica o \mathbb para fazer matriz identidade
+%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{graphicx,color,array}
+\usepackage{float} %para usar comando [H] na fig e posicionar figuras onde quero
+%\usepackage{mathtools} %inclui automaticamente o 'amsmath'
+\usepackage{multicol}
+
+%\usepackage{mathtools} %inclui automaticamente o 'amsmath'
+
+\usepackage{ctable}
+
+%\usepackage{natbib} % bibliography style file
+
+%%%%%%%%%%%%%%%%%%%% esteticos
+\setlength{\belowcaptionskip}{10pt} %espaço abaixo do caption
+%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%% não estão sendo usados!
+%\usepackage{tikz}      %gera fluxograma
+%\usetikzlibrary{shapes,arrows}
+%\usepackage{placeins} %permite fixar barreiras para posicionar as fig
+
+%%%%%%%%%%%%%%%%%%% modifica simbolos do footnote!
+%1 - *
+%2 - dagger
+%3 - double dagger
+%4 - ... 9 (see page 175 of the latex manual)
+%\long\def\symbolfootnote[#1]#2{\begingroup%
+%\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% new command
+\newcommand{\blue}[1]{\textcolor{blue}{#1}\index{#1@\textcolor{blue}{#1}}}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\benn}{\begin{equation*}}
+\newcommand{\eenn}{\end{equation*}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\nn}{\nonumber \\}
+
+%\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})} %install te.bst style
+
+%\def\reindex #1 #2\sentinel{\index{#2, #1}}
+%\newcommand{\person}[1]{#1\reindex #1\sentinel}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\bf {Relatorio}}
+\author{Karine Piacentini Coelho da Costa\footnote{karinepcdc@ufrn.br}}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% DOCUMENT BODY %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%% FRONT MATTERS %%%%%%%%%%%
+%\input{Front.tex}
+\maketitle
+
+%\newpage
+%\thispagestyle{empty}
+%\mbox{}
+
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+
+\newpage
+%\input{1_sumReport.tex}
+
+\newpage
+
+%\newpage
+%\thispagestyle{empty}
+%\mbox{}
+%\newpage
+
+%%%%%%% MAIN MATTERS %%%%%%%%%%%%
+\input{1_intro.tex}
+\input{2_metodos.tex}
+\input{3_resultados.tex}
+%\input{4_discussao.tex}
+
+
+
+%-------- APPENDIX -------------%
+%\appendix
+%\input{}
+
+
+%-------- REFERENCES -----------%
+%\input{referencias.tex} 
+% or:
+
+% Bibliografia
+\renewcommand{\baselinestretch}{1}
+\normalsize
+
+%\bibliographystyle{amsalpha}
+%\bibliographystyle{apsrev4-1}
+%\bibliographystyle{nature}
+%\bibliographystyle{thesnumb}
+%\bibliographystyle{psuthesis}
+%\bibliographystyle{phjcp}
+%\bibliographystyle{ieee}
+%\bibliographystyle{ieeetr}
+%\bibliographystyle{phcpc}
+%\bibliographystyle{phiaea}
+%\bibliographystyle{h-physrev5}
+%\bibliographystyle{phreport}
+%\bibliographystyle{alpha} % like plain style but ref. markers are based on authors' initials and publication year (not 1,2,3...);
+%\bibliographystyle{plain} % Entries are ordered alphabetically
+%\bibliographystyle{unsrt} % Entries are ordered in the order they are first referenced
+%\bibliographystyle{abbrv} % like plain style except that first names and names of journals and months are abbreviated;
+\bibliographystyle{ieeetr} % merge unsrt and abbrv plus title in quotation marks
+%\bibliographystyle{plainnat}
+
+%\bibliography{refDis2014} %arquivo .bib
+\renewcommand{\baselinestretch}{1.5}
+\normalsize
+
+
+\end{document}
