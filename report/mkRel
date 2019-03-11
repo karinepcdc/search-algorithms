@@ -10,7 +10,8 @@ pdflatex report.tex
 pdflatex report.tex
 pdflatex report.tex #just to be sure the cross reference will be right!
 
-rm report.aux report.log report.bbl report.blg  report.toc
+rm report.aux report.log report.toc 
+#rm report.bbl report.blg  
 
 
 # epstopdf myfigure.eps (to generate myfigure.pdf) 

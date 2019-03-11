@@ -9,10 +9,99 @@
 
 \section{Algoritmos}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Algorithm2e codes %%%
 
+\SetKwProg{Fnc}{Função}{}{fim}
+\SetKw{Ate}{até}
+\SetKwArray{vet}{V}
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Busca linear}
 
+\begin{algorithm}[H]
+  \DontPrintSemicolon
+  \SetAlgoLined
+  \caption{Busca linear}
+
+  \Entrada{Vetor $V$, chave $k$ e limites de busca esquerdo $l$ e direito $r$ (inclusive).}
+  \Saida{Índice da ocorrência de $k$ em $V$; ou $-1$ caso não exista $k$ em $V$.}
+  \tcc{Precondição: $l \leq r$; $l,r \geq 0$; $V$ em ordem crescente.}  
+  \BlankLine
+
+  \Fnc{buscaLin($V$: {\bf arranjo de inteiros}; $k$: {\bf inteiro}; $l$: {\bf inteiro}; $r$: {\bf inteiro}): {\bf inteiro}}{
+    {\bf var} $i$: {\bf inteiro} \;
+    \Enqto{$i \leftarrow l \; \Ate \; r$}{
+      \Se{$\vet{i} \; == \; k$}{
+        \Retorna{$i$}
+      }       
+    }
+
+    \Retorna{$-1$}
+  }
+\end{algorithm}
+
+
+
 \subsection{Busca binária}
+
+\begin{algorithm}[H]
+  \DontPrintSemicolon
+  \SetAlgoLined
+  \caption{Busca binária iterativa}
+
+  \Entrada{Vetor $V$, chave $k$ e limites de busca esquerdo $l$ e direito $r$ (inclusive).}
+  \Saida{Índice da ocorrência de $k$ em $V$; ou $-1$ caso não exista $k$ em $V$.}
+  \tcc{Precondição: $l \leq r$; $l,r \geq 0$; $V$ em ordem crescente.}  
+  \BlankLine
+
+  \Fnc{buscaBin($V$: {\bf arranjo de inteiros}; $k$: {\bf inteiro}; $l$: {\bf inteiro}; $r$: {\bf inteiro}): {\bf inteiro}}{
+    {\bf var} $m$: {\bf inteiro} \;
+    \Enqto{$r \geq \;l$}{
+      $m \leftarrow (l+r)/2$\;
+      \Se{$k \; == \; \vet{m}$}{
+        \Retorna{$m$}
+      } \SenaoSe{$k \; < \; \vet{m}$}{
+        $r \leftarrow m-1$\;
+      } \Senao{
+        $l \leftarrow m+1$\;
+      }
+      
+    }
+
+    \Retorna{$-1$}
+  }
+\end{algorithm}
+
+
+\begin{algorithm}[H]
+  \DontPrintSemicolon
+  \SetAlgoLined
+  \caption{Busca binária recursiva}
+
+  \Entrada{Vetor $V$, chave $k$ e limites de busca esquerdo $l$ e direito $r$ (inclusive).}
+  \Saida{Índice da ocorrência de $k$ em $V$; ou $-1$ caso não exista $k$ em $V$.}
+  \tcc{Precondição: $l \leq r$; $l,r \geq 0$; $V$ em ordem crescente.}  
+  \BlankLine
+
+  \Fnc{buscaBin($V$: {\bf arranjo de inteiros}; $k$: {\bf inteiro}; $l$: {\bf inteiro}; $r$: {\bf inteiro}): {\bf inteiro}}{
+    {\bf var} $m$: {\bf inteiro} \;
+    \Enqto{$r \geq \;l$}{
+      $m \leftarrow (l+r)/2$\;
+      \Se{$k \; == \; \vet{m}$}{
+        \Retorna{$m$}
+      } \SenaoSe{$k \; < \; \vet{m}$}{
+        $r \leftarrow m-1$\;
+      } \Senao{
+        $l \leftarrow m+1$\;
+      }
+      
+    }
+
+    \Retorna{$-1$}
+  }
+\end{algorithm}
+
+
 
 \subsection{Busca ternária}
 

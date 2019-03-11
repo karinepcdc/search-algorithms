@@ -1,3 +1,5 @@
+#include <iostream>
+
 //=== Alias
 using value_type = int ; //!< Simple alias to help code maintenance.
 
@@ -11,32 +13,23 @@ using value_type = int ; //!< Simple alias to help code maintenance.
  */
 const value_type * bsearch( const value_type *first, const value_type *last, value_type value )
 {
-  int size_current= last-first;;
-  const value_type * current;
-
-  if(size_current %2 == 1 && size_current != 1){
-    size_current++;
-  }
-  size_current=size_current/2;
-  current=first+size_current;
-  //std::cout << "size_current: " << size_current << " current: " << *current << std::endl;
+  const value_type *current= first;
+  const value_type *last_i = last;
   
-  while(current>=first && current<last && size_current>0){
-    if(size_current %2 == 1 && size_current != 1){
-      size_current++;
-    }
-    size_current=size_current/2;
+  while(last >= first && first < last_i){
+    current = first + (last - first)/2;
+    //std::cout << " current after: " << *current << std::endl;
  
-    if(*current==value){
+    if(*current == value){
       return current;
-    } else if(*current<value){
-      current=current+size_current;
+    } else if(*current < value){
+      first = current + 1;      
     } else{
-      current=current-size_current;
+      last = current - 1;
     }
-    //std::cout << "size_current: " << size_current << " current: " << *current << std::endl;
+    //std::cout << "first " << *first << " last " << *last << " current first: " << *current << std::endl;
 
   }
-  
-    return last; // STUB
+
+  return last_i; // STUB
 }
