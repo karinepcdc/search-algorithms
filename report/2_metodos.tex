@@ -2,7 +2,6 @@
 
 
 
-
 \section{Caracterização técnica do computador}
 
 
@@ -13,7 +12,15 @@
 %%% Algorithm2e codes %%%
 
 \SetKwProg{Fnc}{Função}{}{fim}
+\SetKwFunction{buscaLin}{buscaLin}
+\SetKwFunction{buscaBin}{buscaBin}
+\SetKwFunction{buscaBinrec}{buscaBin\_rec}
+\SetKwFunction{buscaTer}{buscaTer}
+\SetKwFunction{buscaTerrec}{buscaTer\_rec}
+\SetKwFunction{buscaJump}{buscaJump}
+\SetKwFunction{buscaFib}{buscaFib}
 \SetKw{Ate}{até}
+\SetKw{E}{e}
 \SetKwArray{vet}{V}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Busca linear}
@@ -28,7 +35,7 @@
   \tcc{Precondição: $l \leq r$; $l,r \geq 0$; $V$ em ordem crescente.}  
   \BlankLine
 
-  \Fnc{buscaLin($V$: {\bf arranjo de inteiros}; $k$: {\bf inteiro}; $l$: {\bf inteiro}; $r$: {\bf inteiro}): {\bf inteiro}}{
+  \Fnc{\buscaLin{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
     {\bf var} $i$: {\bf inteiro} \;
     \Enqto{$i \leftarrow l \; \Ate \; r$}{
       \Se{$\vet{i} \; == \; k$}{
@@ -54,13 +61,13 @@
   \tcc{Precondição: $l \leq r$; $l,r \geq 0$; $V$ em ordem crescente.}  
   \BlankLine
 
-  \Fnc{buscaBin($V$: {\bf arranjo de inteiros}; $k$: {\bf inteiro}; $l$: {\bf inteiro}; $r$: {\bf inteiro}): {\bf inteiro}}{
+  \Fnc{\buscaBin{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
     {\bf var} $m$: {\bf inteiro} \;
     \Enqto{$r \geq \;l$}{
       $m \leftarrow (l+r)/2$\;
-      \Se{$k \; == \; \vet{m}$}{
+      \uSe{$k \; == \; \vet{m}$}{
         \Retorna{$m$}
-      } \SenaoSe{$k \; < \; \vet{m}$}{
+      } \uSenaoSe{$k \; < \; \vet{m}$}{
         $r \leftarrow m-1$\;
       } \Senao{
         $l \leftarrow m+1$\;
@@ -82,14 +89,48 @@
   \Saida{Índice da ocorrência de $k$ em $V$; ou $-1$ caso não exista $k$ em $V$.}
   \tcc{Precondição: $l \leq r$; $l,r \geq 0$; $V$ em ordem crescente.}  
   \BlankLine
+  
+  \Fnc{\buscaBinrec{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
+    {\bf var} $m$: {\bf inteiro} \;
+    \uSe{$r < \;l$}{
+      \Retorna{$-1$}
+    } \Senao{
 
-  \Fnc{buscaBin($V$: {\bf arranjo de inteiros}; $k$: {\bf inteiro}; $l$: {\bf inteiro}; $r$: {\bf inteiro}): {\bf inteiro}}{
+      $m \leftarrow (l+r)/2$\;
+      \uSe{$k \; == \; \vet{m}$}{
+        \Retorna{$m$}
+      } \uSenaoSe{$k \; < \; \vet{m}$}{
+        \buscaBinrec{$V$,$l$,$m-1$,$k$}\;
+      } \Senao{
+        \buscaBinrec{$V$,$m+1$,$r$,$k$}\;
+      }
+      
+    }
+
+  }
+\end{algorithm}
+
+
+
+\subsection{Busca ternária}
+
+\begin{algorithm}[H]
+  \DontPrintSemicolon
+  \SetAlgoLined
+  \caption{Busca ternária iterativa}
+
+  \Entrada{Vetor $V$, chave $k$ e limites de busca esquerdo $l$ e direito $r$ (inclusive).}
+  \Saida{Índice da ocorrência de $k$ em $V$; ou $-1$ caso não exista $k$ em $V$.}
+  \tcc{Precondição: $l \leq r$; $l,r \geq 0$; $V$ em ordem crescente.}  
+  \BlankLine
+
+  \Fnc{\buscaTer{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
     {\bf var} $m$: {\bf inteiro} \;
     \Enqto{$r \geq \;l$}{
       $m \leftarrow (l+r)/2$\;
-      \Se{$k \; == \; \vet{m}$}{
+      \uSe{$k \; == \; \vet{m}$}{
         \Retorna{$m$}
-      } \SenaoSe{$k \; < \; \vet{m}$}{
+      } \uSenaoSe{$k \; < \; \vet{m}$}{
         $r \leftarrow m-1$\;
       } \Senao{
         $l \leftarrow m+1$\;
@@ -102,10 +143,43 @@
 \end{algorithm}
 
 
-
-\subsection{Busca ternária}
-
 \subsection{{\it Jump search}}
+
+\begin{algorithm}[H]
+  \DontPrintSemicolon
+  \SetAlgoLined
+  \caption{{\it Jump search}}
+
+  \Entrada{Vetor $\vet$, chave $k$ e limites de busca esquerdo $l$ e direito $r$ (inclusive).}
+  \Saida{Índice da ocorrência de $k$ em $V$; ou $-1$ caso não exista $k$ em $V$.}
+  \tcc{Precondição: $l \leq r$; $l,r \geq 0$; $V$ em ordem crescente.}  
+  \BlankLine
+
+  \Fnc{\buscaJump{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
+    {\bf var} $m$: {\bf inteiro} \;
+    {\bf var} $p$: {\bf inteiro} \tcc{tamanho do salto}\;
+
+    $p \leftarrow \sqrt{r-l+1}$\;
+    $m \leftarrow l+p$\;
+    
+    \Enqto{$m \leq r$}{
+      \uSe{$k \; == \; \vet{m}$}{
+        \Retorna $m$\;
+      }\SenaoSe{$k \; < \;\vet{m}$}{
+        \Retorna{\buscaLin{$\vet,m-p,m-1,k$}}
+      }
+      $m = m + p$
+    }
+
+    \Se{$m>r$ \E $\vet{r} > k$}{
+      \Retorna{\buscaLin{$\vet,m-p,r,k$}}
+    }
+
+    \Retorna{$-1$}
+  }
+\end{algorithm}
+
+
 
 \subsection{Busca de Fibonacci}
 
