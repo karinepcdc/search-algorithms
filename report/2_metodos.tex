@@ -4,8 +4,6 @@
 
 \section{Caracterização técnica do computador}
 
-
-
 \section{Algoritmos}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13,9 +11,9 @@
 
 \SetKwProg{Fnc}{Função}{}{fim}
 \SetKwFunction{buscaLin}{buscaLin}
-\SetKwFunction{buscaBin}{buscaBin}
+\SetKwFunction{buscaBin}{buscaBin\_it}
 \SetKwFunction{buscaBinrec}{buscaBin\_rec}
-\SetKwFunction{buscaTer}{buscaTer}
+\SetKwFunction{buscaTer}{buscaTer\_it}
 \SetKwFunction{buscaTerrec}{buscaTer\_rec}
 \SetKwFunction{buscaJump}{buscaJump}
 \SetKwFunction{buscaFib}{buscaFib}
@@ -62,7 +60,7 @@
   \BlankLine
 
   \Fnc{\buscaBin{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
-    {\bf var} $m$: {\bf inteiro} \;
+    {\bf var} $m$: {\bf inteiro} \tcc{último valor da primeira metade do arranjo} \;
     \Enqto{$r \geq \;l$}{
       $m \leftarrow (l+r)/2$\;
       \uSe{$k \; == \; \vet{m}$}{
@@ -91,7 +89,7 @@
   \BlankLine
   
   \Fnc{\buscaBinrec{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
-    {\bf var} $m$: {\bf inteiro} \;
+    {\bf var} $m$: {\bf inteiro} \tcc{último valor da primeira metade do arranjo} \;
     \uSe{$r < \;l$}{
       \Retorna{$-1$}
     } \Senao{
@@ -100,9 +98,9 @@
       \uSe{$k \; == \; \vet{m}$}{
         \Retorna{$m$}
       } \uSenaoSe{$k \; < \; \vet{m}$}{
-        \buscaBinrec{$V$,$l$,$m-1$,$k$}\;
+        \Retorna \buscaBinrec{$V$,$l$,$m-1$,$k$}\;
       } \Senao{
-        \buscaBinrec{$V$,$m+1$,$r$,$k$}\;
+        \Retorna \buscaBinrec{$V$,$m+1$,$r$,$k$}\;
       }
       
     }
@@ -125,20 +123,59 @@
   \BlankLine
 
   \Fnc{\buscaTer{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
-    {\bf var} $m$: {\bf inteiro} \;
+    {\bf var} $t1$: {\bf inteiro} \tcc{último valor do primeiro terço do arranjo} \;
+    {\bf var} $t2$: {\bf inteiro} \tcc{último valor do segundo terço do arranjo} \;
+
     \Enqto{$r \geq \;l$}{
-      $m \leftarrow (l+r)/2$\;
-      \uSe{$k \; == \; \vet{m}$}{
-        \Retorna{$m$}
-      } \uSenaoSe{$k \; < \; \vet{m}$}{
-        $r \leftarrow m-1$\;
+      $t1 \leftarrow l+(l+r)/3$\;
+      $t2 \leftarrow r-(l+r)/3$\;
+      \uSe{$k \; == \; \vet{t1}$}{
+        \Retorna{$t1$}
+      } \uSenaoSe{$k \; == \; \vet{t2}$}{
+        \Retorna{$t2$}
+      } \uSenaoSe{$k \; < \; \vet{t1}$}{
+        $r \leftarrow t1-1$\;
+      } \uSenaoSe{$k \; < \; \vet{t2}$}{
+        $l \leftarrow t1+1$\;
+        $r \leftarrow t2-1$\;
       } \Senao{
-        $l \leftarrow m+1$\;
+        $l \leftarrow t2+1$\;
       }
       
     }
 
     \Retorna{$-1$}
+  }
+\end{algorithm}
+
+
+\begin{algorithm}[H]
+  \DontPrintSemicolon
+  \SetAlgoLined
+  \caption{Busca ternária recursiva}
+
+  \Entrada{Vetor $V$, chave $k$ e limites de busca esquerdo $l$ e direito $r$ (inclusive).}
+  \Saida{Índice da ocorrência de $k$ em $V$; ou $-1$ caso não exista $k$ em $V$.}
+  \tcc{Precondição: $l \leq r$; $l,r \geq 0$; $V$ em ordem crescente.}  
+  \BlankLine
+  
+  \Fnc{\buscaTerrec{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
+    {\bf var} $m$: {\bf inteiro} \;
+    \uSe{$r < \;l$}{
+      \Retorna{$-1$}
+    } \Senao{
+
+      $m \leftarrow (l+r)/2$\;
+      \uSe{$k \; == \; \vet{m}$}{
+        \Retorna{$m$}
+      } \uSenaoSe{$k \; < \; \vet{m}$}{
+        \Retorna \buscaBinrec{$V$,$l$,$m-1$,$k$}\;
+      } \Senao{
+        \Retorna \buscaBinrec{$V$,$m+1$,$r$,$k$}\;
+      }
+      
+    }
+
   }
 \end{algorithm}
 

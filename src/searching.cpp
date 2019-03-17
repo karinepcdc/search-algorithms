@@ -44,12 +44,12 @@ int main()
         }
     }
 
-    std::cout << "\n\n >>> Starting binary search..." << std::endl;
+    std::cout << "\n\n >>> Starting iterative binary search..." << std::endl;
     // Executes several searchs in the data container.
     for( const auto & e : targets ) // ranged for com referencia constante
     {
         // Look for target in the entire range.
-        auto result = const_cast<value_type *>( bsearch( std::begin(A), std::end(A), e ) );
+        auto result = const_cast<value_type *>( bsearch_it( std::begin(A), std::end(A), e ) );
 
         // Process the result
         if ( result != std::end(A) )
@@ -62,6 +62,64 @@ int main()
             std::cout << ">>> Value \"" << e << "\" was not found in the array!\n";
         }
     }
+
+    std::cout << "\n\n >>> Starting recursive binary search..." << std::endl;
+    // Executes several searchs in the data container.
+    for( const auto & e : targets ) // ranged for com referencia constante
+    {
+        // Look for target in the entire range.
+        auto result = const_cast<value_type *>( bsearch_rec( std::begin(A), std::end(A), e ) );
+
+        // Process the result
+        if ( result != std::end(A) )
+        {
+            std::cout << ">>> Found \"" << e << "\" at position "
+                      << std::distance(std::begin(A),result) << ".\n";
+        }
+        else
+        {
+            std::cout << ">>> Value \"" << e << "\" was not found in the array!\n";
+        }
+    }
+
+    std::cout << "\n\n >>> Starting iterative ternary search..." << std::endl;
+    // Executes several searchs in the data container.
+    for( const auto & e : targets ) // ranged for com referencia constante
+    {
+        // Look for target in the entire range.
+        auto result = const_cast<value_type *>( tsearch_it( std::begin(A), std::end(A), e ) );
+
+        // Process the result
+        if ( result != std::end(A) )
+        {
+            std::cout << ">>> Found \"" << e << "\" at position "
+                      << std::distance(std::begin(A),result) << ".\n";
+        }
+        else
+        {
+            std::cout << ">>> Value \"" << e << "\" was not found in the array!\n";
+        }
+    }
+
+    std::cout << "\n\n >>> Starting jump search..." << std::endl;
+    // Executes several searchs in the data container.
+    for( const auto & e : targets ) // ranged for com referencia constante
+    {
+        // Look for target in the entire range.
+        auto result = const_cast<value_type *>( jumpsearch( std::begin(A), std::end(A), e ) );
+
+        // Process the result
+        if ( result != std::end(A) )
+        {
+            std::cout << ">>> Found \"" << e << "\" at position "
+                      << std::distance(std::begin(A),result) << ".\n";
+        }
+        else
+        {
+            std::cout << ">>> Value \"" << e << "\" was not found in the array!\n";
+        }
+    }
+
 
     return 0;
 }
