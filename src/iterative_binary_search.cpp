@@ -13,23 +13,23 @@ using value_type = int ; //!< Simple alias to help code maintenance.
  */
 const value_type * bsearch_it( const value_type *first, const value_type *last, value_type value )
 {
-  const value_type *current= NULL; // pointer to current value being analyzed
+  const value_type *mid= NULL; // pointer to current value being analyzed
   const value_type *last_i = last;  // keep last value 
   
   while(last > first && first < last_i){
-    current = first + (last - first)/2;
-    //std::cout << " current after: " << *current << std::endl;
+    mid = first + (last - first)/2;
+    //std::cout << " mid after: " << *mid << std::endl;
  
-    if(*current == value){
-      return current;
-    } else if(*current < value){
-      first = current + 1;      
+    if(*mid == value){  // value found!
+      return mid;
+    } else if(*mid < value){
+      first = mid + 1;      
     } else{
-      last = current;
+      last = mid;
     }
-    //std::cout << "first " << *first << " last " << *last << " current first: " << *current << std::endl;
+    //std::cout << "first " << *first << " last " << *last << " mid first: " << *mid << std::endl;
 
   }
 
-  return last_i; 
+  return last_i; // value not found
 }

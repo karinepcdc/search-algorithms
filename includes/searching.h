@@ -19,6 +19,12 @@ const value_type * bsearch_recursivePart( const value_type *, const value_type *
 // iterative ternary search
 const value_type * tsearch_it( const value_type *, const value_type *, value_type);
 
+// recursive binary search main
+const value_type * tsearch_rec(const value_type *, const value_type *, value_type);
+
+// recursive ternary search recursive part
+const value_type * tsearch_recursivePart( const value_type *, const value_type *, value_type);
+
 // jump search
 const value_type * jumpsearch(const value_type *, const value_type *, value_type);
 

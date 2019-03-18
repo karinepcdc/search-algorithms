@@ -123,23 +123,22 @@
   \BlankLine
 
   \Fnc{\buscaTer{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
-    {\bf var} $t1$: {\bf inteiro} \tcc{último valor do primeiro terço do arranjo} \;
-    {\bf var} $t2$: {\bf inteiro} \tcc{último valor do segundo terço do arranjo} \;
-
+    {\bf var} $t_{1}$: {\bf inteiro} \tcc{último valor do primeiro terço do arranjo}
+    {\bf var} $t_{2}$: {\bf inteiro} \tcc{último valor do segundo terço do arranjo} \;
     \Enqto{$r \geq \;l$}{
-      $t1 \leftarrow l+(l+r)/3$\;
-      $t2 \leftarrow r-(l+r)/3$\;
-      \uSe{$k \; == \; \vet{t1}$}{
-        \Retorna{$t1$}
-      } \uSenaoSe{$k \; == \; \vet{t2}$}{
-        \Retorna{$t2$}
-      } \uSenaoSe{$k \; < \; \vet{t1}$}{
-        $r \leftarrow t1-1$\;
-      } \uSenaoSe{$k \; < \; \vet{t2}$}{
-        $l \leftarrow t1+1$\;
-        $r \leftarrow t2-1$\;
+      $t_{1} \leftarrow l+(r-l)/3$\;
+      $t_{2} \leftarrow r-(r-l)/3$\;\;
+      \uSe{$k \; == \; \vet{$t_{1}$}$}{
+        \Retorna{$t_{1}$}
+      } \uSenaoSe{$k \; == \; \vet{$t_{2}$}$}{
+        \Retorna{$t_{2}$}
+      } \uSenaoSe{$k \; < \; \vet{$t_{1}$}$}{
+        $r \leftarrow t_{1}-1$\;
+      } \uSenaoSe{$k \; < \; \vet{$t_{2}$}$}{
+        $l \leftarrow t_{1}+1$\;
+        $r \leftarrow t_{2}-1$\;
       } \Senao{
-        $l \leftarrow t2+1$\;
+        $l \leftarrow t_{2}+1$\;
       }
       
     }
@@ -160,18 +159,23 @@
   \BlankLine
   
   \Fnc{\buscaTerrec{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
-    {\bf var} $m$: {\bf inteiro} \;
+    {\bf var} $t_{1}$: {\bf inteiro} \tcc{último valor do primeiro terço do arranjo}
+    {\bf var} $t_{2}$: {\bf inteiro} \tcc{último valor do segundo terço do arranjo} \;    
     \uSe{$r < \;l$}{
       \Retorna{$-1$}
     } \Senao{
-
-      $m \leftarrow (l+r)/2$\;
-      \uSe{$k \; == \; \vet{m}$}{
-        \Retorna{$m$}
-      } \uSenaoSe{$k \; < \; \vet{m}$}{
-        \Retorna \buscaBinrec{$V$,$l$,$m-1$,$k$}\;
+      $t_{1} \leftarrow l+(r-l)/3$\;
+      $t_{2} \leftarrow r-(r-l)/3$\;\;
+      \uSe{$k \; == \; \vet{$t_{1}$}$}{
+        \Retorna{$t_{1}$}
+      } \uSenaoSe{$k \; == \; \vet{$t_{2}$}$}{
+        \Retorna{$t_{2}$}
+      } \uSenaoSe{$k \; < \; \vet{$t_{1}$}$}{
+        \Retorna \buscaTerrec{$V$,$l$,$t_{1}-1$,$k$}
+      } \uSenaoSe{$k \; < \; \vet{$t_{2}$}$}{
+        \Retorna \buscaTerrec{$V$,$t_{1}+1$,$t_{2}-1$,$k$}
       } \Senao{
-        \Retorna \buscaBinrec{$V$,$m+1$,$r$,$k$}\;
+        \Retorna \buscaTerrec{$V$,$t_{2}+1$,$r$,$k$}
       }
       
     }
@@ -220,4 +224,19 @@
 
 \subsection{Busca de Fibonacci}
 
-%ver detalhes na seção 6 das instruções
+
+\begin{algorithm}[H]
+  \DontPrintSemicolon
+  \SetAlgoLined
+  \caption{Busca de Fibonacci}
+
+  \Entrada{Vetor $V$, chave $k$ e limites de busca esquerdo $l$ e direito $r$ (inclusive).}
+  \Saida{Índice da ocorrência de $k$ em $V$; ou $-1$ caso não exista $k$ em $V$.}
+  \tcc{Precondição: $l \leq r$; $l,r \geq 0$; $V$ em ordem crescente.}  
+  \BlankLine
+
+  \Fnc{\buscaBin{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
+
+    \Retorna{$-1$}
+  }
+\end{algorithm}

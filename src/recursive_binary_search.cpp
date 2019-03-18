@@ -3,7 +3,7 @@
 //=== Alias
 using value_type = int ; //!< Simple alias to help code maintenance.
 
-/// Recursive part of bseach_rec()
+/// Recursive part of bsearch_rec()
 /*! 
  * \param first Pointer to the first element in the range.
  * \param last Pointer past the last valid element in the range.
@@ -12,22 +12,22 @@ using value_type = int ; //!< Simple alias to help code maintenance.
  */
 const value_type * bsearch_recursivePart(const value_type *first, const value_type *last, value_type value){
 
-  const value_type *current = NULL;
+  const value_type *mid = NULL;
 
 
   if(last <= first){
     return NULL; // value not found
   } else {
 
-    current = first + (last - first)/2;
-    //std::cout << "first " << *first << " last " << *last << " current first: " << *current << std::endl;
+    mid = first + (last - first)/2;
+    //std::cout << "first " << *first << " last " << *last << " mid first: " << *mid << std::endl;
 
-    if(value == *current){
-      return current;
-    } else if(value < *current){
-      return bsearch_recursivePart(first, current, value);
+    if(value == *mid){ // value found!
+      return mid;
+    } else if(value < *mid){
+      return bsearch_recursivePart(first, mid, value);
     } else{
-      return bsearch_recursivePart(current + 1, last, value);
+      return bsearch_recursivePart(mid + 1, last, value);
     }
       
   }
