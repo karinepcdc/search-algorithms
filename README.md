@@ -27,13 +27,16 @@ The goals of this project are:
 In order to answer theses questions test such and such were made...
 
 --------------------------------------------------
-Full and detailed report can be found at ...
+Full and detailed report (in portuguese) can be found on the 'report' directory. 
 
 --------------------------------------------------
 --------------------------------------------------
-To compile project:
+To compile project for the first time:
 
-   	   
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
 
 --------------------------------------------------
 --------------------------------------------------

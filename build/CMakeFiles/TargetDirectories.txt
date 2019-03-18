@@ -1,0 +1,4 @@
+/Users/karine/prog/cpp/EDB1/search-algorithms/build/CMakeFiles/run_tests.dir
+/Users/karine/prog/cpp/EDB1/search-algorithms/build/CMakeFiles/rebuild_cache.dir
+/Users/karine/prog/cpp/EDB1/search-algorithms/build/CMakeFiles/edit_cache.dir
+/Users/karine/prog/cpp/EDB1/search-algorithms/build/CMakeFiles/search.dir
