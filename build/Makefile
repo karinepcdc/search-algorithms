@@ -258,6 +258,33 @@ src/recursive_binary_search.cpp.s:
 	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/recursive_binary_search.cpp.s
 .PHONY : src/recursive_binary_search.cpp.s
 
+src/recursive_ternary_search.o: src/recursive_ternary_search.cpp.o
+
+.PHONY : src/recursive_ternary_search.o
+
+# target to build an object file
+src/recursive_ternary_search.cpp.o:
+	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/recursive_ternary_search.cpp.o
+.PHONY : src/recursive_ternary_search.cpp.o
+
+src/recursive_ternary_search.i: src/recursive_ternary_search.cpp.i
+
+.PHONY : src/recursive_ternary_search.i
+
+# target to preprocess a source file
+src/recursive_ternary_search.cpp.i:
+	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/recursive_ternary_search.cpp.i
+.PHONY : src/recursive_ternary_search.cpp.i
+
+src/recursive_ternary_search.s: src/recursive_ternary_search.cpp.s
+
+.PHONY : src/recursive_ternary_search.s
+
+# target to generate assembly for a file
+src/recursive_ternary_search.cpp.s:
+	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/recursive_ternary_search.cpp.s
+.PHONY : src/recursive_ternary_search.cpp.s
+
 src/timing_search.o: src/timing_search.cpp.o
 
 .PHONY : src/timing_search.o
@@ -309,6 +336,9 @@ help:
 	@echo "... src/recursive_binary_search.o"
 	@echo "... src/recursive_binary_search.i"
 	@echo "... src/recursive_binary_search.s"
+	@echo "... src/recursive_ternary_search.o"
+	@echo "... src/recursive_ternary_search.i"
+	@echo "... src/recursive_ternary_search.s"
 	@echo "... src/timing_search.o"
 	@echo "... src/timing_search.i"
 	@echo "... src/timing_search.s"

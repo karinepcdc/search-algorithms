@@ -12,6 +12,8 @@ CMakeFiles/search.dir/src/jump_search.cpp.o
  /home/karinepcdc/Documentos/search-algorithms/src/jump_search.cpp
 CMakeFiles/search.dir/src/recursive_binary_search.cpp.o
  /home/karinepcdc/Documentos/search-algorithms/src/recursive_binary_search.cpp
+CMakeFiles/search.dir/src/recursive_ternary_search.cpp.o
+ /home/karinepcdc/Documentos/search-algorithms/src/recursive_ternary_search.cpp
 CMakeFiles/search.dir/src/timing_search.cpp.o
  /home/karinepcdc/Documentos/search-algorithms/includes/searching.h
  /home/karinepcdc/Documentos/search-algorithms/src/timing_search.cpp

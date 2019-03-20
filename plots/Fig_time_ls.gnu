@@ -22,7 +22,7 @@ set xlabel "\\Large{\\rotatebox{0}{Array size $N$}}" offset 0,0
 set ytics auto
 set mytics 5
 #set yrange [0:20000]
-set ylabel "\\Large{\\rotatebox{0}{Execution time $t$ ($\\mu$s)}}" offset 1,0
+set ylabel "\\Large{\\rotatebox{0}{Execution time $t$ (ns)}}" offset 1,0
 
 ##include labels
 #set label 1 "$U_0=0.0$"  at 0.52,0.4 front   ##LABEL1##
@@ -45,15 +45,10 @@ rep
 set term x11
 
 !latex 'figure-gnuplot.tex'
-!dvips 'figure-gnuplot.dvi'
 !dvipdf 'figure-gnuplot.dvi'
-!pdfcrop 'figure-gnuplot.pdf'    #pdfcrop não funciona!
-!mv figure-gnuplot-crop.pdf conc-w.pdf
-!ps2epsi figure-gnuplot.ps   
-!cp  figure-gnuplot.epsi conc-w.eps
+!pdfcrop 'figure-gnuplot.pdf'    
+!mv figure-gnuplot-crop.pdf lsearch_time.pdf ##FIGNAMEPDF##
 
-!mv conc-w.eps lsearch_time.eps ##FIGNAMEEPS##
-!mv conc-w.pdf lsearch_time.pdf ##FIGNAMEPDF##
-!rm figure-gnuplot.dvi figure-gnuplot.ps figure-gnuplot.epsi figure-gnuplot.aux figure-gnuplot.log fig.eps fig.tex figure-gnuplot.pdf
+!rm figure-gnuplot.dvi figure-gnuplot.aux figure-gnuplot.log fig.eps fig.tex figure-gnuplot.pdf
 
 set term x11

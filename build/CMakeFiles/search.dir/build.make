@@ -109,9 +109,22 @@ CMakeFiles/search.dir/src/iterative_ternary_search.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/search.dir/src/iterative_ternary_search.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/karinepcdc/Documentos/search-algorithms/src/iterative_ternary_search.cpp -o CMakeFiles/search.dir/src/iterative_ternary_search.cpp.s
 
+CMakeFiles/search.dir/src/recursive_ternary_search.cpp.o: CMakeFiles/search.dir/flags.make
+CMakeFiles/search.dir/src/recursive_ternary_search.cpp.o: ../src/recursive_ternary_search.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/search.dir/src/recursive_ternary_search.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/search.dir/src/recursive_ternary_search.cpp.o -c /home/karinepcdc/Documentos/search-algorithms/src/recursive_ternary_search.cpp
+
+CMakeFiles/search.dir/src/recursive_ternary_search.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/search.dir/src/recursive_ternary_search.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/karinepcdc/Documentos/search-algorithms/src/recursive_ternary_search.cpp > CMakeFiles/search.dir/src/recursive_ternary_search.cpp.i
+
+CMakeFiles/search.dir/src/recursive_ternary_search.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/search.dir/src/recursive_ternary_search.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/karinepcdc/Documentos/search-algorithms/src/recursive_ternary_search.cpp -o CMakeFiles/search.dir/src/recursive_ternary_search.cpp.s
+
 CMakeFiles/search.dir/src/jump_search.cpp.o: CMakeFiles/search.dir/flags.make
 CMakeFiles/search.dir/src/jump_search.cpp.o: ../src/jump_search.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/search.dir/src/jump_search.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/search.dir/src/jump_search.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/search.dir/src/jump_search.cpp.o -c /home/karinepcdc/Documentos/search-algorithms/src/jump_search.cpp
 
 CMakeFiles/search.dir/src/jump_search.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/search.dir/src/jump_search.cpp.s: cmake_force
 
 CMakeFiles/search.dir/src/timing_search.cpp.o: CMakeFiles/search.dir/flags.make
 CMakeFiles/search.dir/src/timing_search.cpp.o: ../src/timing_search.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/search.dir/src/timing_search.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/search.dir/src/timing_search.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/search.dir/src/timing_search.cpp.o -c /home/karinepcdc/Documentos/search-algorithms/src/timing_search.cpp
 
 CMakeFiles/search.dir/src/timing_search.cpp.i: cmake_force
@@ -141,6 +154,7 @@ search_OBJECTS = \
 "CMakeFiles/search.dir/src/iterative_binary_search.cpp.o" \
 "CMakeFiles/search.dir/src/recursive_binary_search.cpp.o" \
 "CMakeFiles/search.dir/src/iterative_ternary_search.cpp.o" \
+"CMakeFiles/search.dir/src/recursive_ternary_search.cpp.o" \
 "CMakeFiles/search.dir/src/jump_search.cpp.o" \
 "CMakeFiles/search.dir/src/timing_search.cpp.o"
 
@@ -151,11 +165,12 @@ search: CMakeFiles/search.dir/src/iterative_linear_search.cpp.o
 search: CMakeFiles/search.dir/src/iterative_binary_search.cpp.o
 search: CMakeFiles/search.dir/src/recursive_binary_search.cpp.o
 search: CMakeFiles/search.dir/src/iterative_ternary_search.cpp.o
+search: CMakeFiles/search.dir/src/recursive_ternary_search.cpp.o
 search: CMakeFiles/search.dir/src/jump_search.cpp.o
 search: CMakeFiles/search.dir/src/timing_search.cpp.o
 search: CMakeFiles/search.dir/build.make
 search: CMakeFiles/search.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable search"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable search"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/search.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

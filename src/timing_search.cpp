@@ -27,7 +27,7 @@ long int * sampleArray(int step){
 
 int main(int argc, char *argv[]){
 
-  long int V_size = 1000000;
+  long int V_size = 100000000;
   value_type *V = new value_type[V_size];  // vector of samples
   value_type *sample_end=NULL;      // pointer to V sample end
   int Nsamples{0}, sample_isize{0}; // number of samples and initial sample size
@@ -37,10 +37,11 @@ int main(int argc, char *argv[]){
 
   // pointer to the different search algorithms functions 
   const value_type * (*call_seach_alg[])( const value_type *, const value_type *, value_type) 
-    = {lsearch, bsearch_it, bsearch_rec};
+    = {lsearch, bsearch_it, bsearch_rec, tsearch_it, tsearch_rec, jumpsearch};
 
-  enum Algorithms {LSEARCH, BSEARCH_IT, BSEARCH_REC};
-  std::string name_alg[]={"linear search","binary search (iterative)", "binary search (recursive)"};
+  enum Algorithms {LSEARCH, BSEARCH_IT, BSEARCH_REC, TSEARCH_IT, TSEARCH_REC, JUMPSEARCH};
+  std::string name_alg[]={"linear search","binary search (iterative)", "binary search (recursive)", "ternary search (iterative)", "ternary search (recursive)", "Jump search"};
+  std::string name_file[]={"lsearch_time","bsearch_it_time", "bsearch_rec_time", "tsearch_it_time", "tsearch_rec_time", "jumpsearch_time"};
   Algorithms sel_alg;  
 
   if(argc < 4) {
@@ -49,9 +50,13 @@ int main(int argc, char *argv[]){
     std::cout << ">>> Search algorithm options:\n"
 	      << LSEARCH << " - Linear seach \n"
 	      << BSEARCH_IT << " - Binary Search (iterative)\n"
-	      << BSEARCH_REC << " - Binary Search (recursive)"
+	      << BSEARCH_REC << " - Binary Search (recursive)\n"
+      	      << TSEARCH_IT << " - Ternary Search (iterative)\n"
+      	      << TSEARCH_REC << " - Ternary Search (recursive)\n"
+      	      << JUMPSEARCH << " - Jump Search"
 	      << std::endl;
 
+    delete[] V;
     return -1;
   }
 
@@ -82,18 +87,25 @@ int main(int argc, char *argv[]){
   for(long int i=0; i<V_size; i++){
     V[i]=2*i;
   }
+
+  //////////////////////////////////////////////////////////
+  // Measuring execution time for selected search methold //
+  //////////////////////////////////////////////////////////
   
-  // Measuring execution time of each search methold
   std::cout << ">>> Doing " << name_alg[sel_alg] << "\n *** number of samples: "<< Nsamples << " ***\n";
 
   // open file to register data
-  std::ofstream datafile("../plots/data/lsearch_time.dat", std::ofstream::out);
+  std::string filename{"../plots/data/"};
+  filename.std::string::append(name_file[sel_alg]).std::string::append(".dat");
+
+  std::ofstream datafile(filename, std::ofstream::out);
   if(!datafile){
     std::cerr << "file could not be opened for writing." << std::endl;
+    delete[] V;
     return -1;
   }
   
-  datafile << "# array size \t execution time (\\mus)\n";
+  datafile << "# array size \t execution time (ns)\n";
   
   // calculate execution time for an linear incresent sample size
   sample_end = V + sample_isize; // Define size of the sample vector
@@ -102,23 +114,21 @@ int main(int argc, char *argv[]){
     // Calculate progressive average for a sample size
     t_mean=0;
     for(int i=1; i<=100; i++){
-    
       // measure execution time
       auto start = std::chrono::high_resolution_clock::now();
       // checking wost case: searching element that is outside range
       (*call_seach_alg[sel_alg])(V, sample_end, *(sample_end-1) + 1); 
       auto stop = std::chrono::high_resolution_clock::now();
   
-      auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+      auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
       t_mean += (duration.count() - t_mean)/(double)i;
     }
 
-    datafile << sample_end - V << "\t\t" <<  t_mean << "\n";
+    datafile << sample_end - V << "\t\t" <<  t_mean << std::endl;
   
     sample_end += sample_step;
     
   }
-  datafile << std::endl;
   
   datafile.close();
 

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/karinepcdc/Documentos/search-algorithms/src/iterative_ternary_search.cpp" "/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles/search.dir/src/iterative_ternary_search.cpp.o"
   "/home/karinepcdc/Documentos/search-algorithms/src/jump_search.cpp" "/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles/search.dir/src/jump_search.cpp.o"
   "/home/karinepcdc/Documentos/search-algorithms/src/recursive_binary_search.cpp" "/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles/search.dir/src/recursive_binary_search.cpp.o"
+  "/home/karinepcdc/Documentos/search-algorithms/src/recursive_ternary_search.cpp" "/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles/search.dir/src/recursive_ternary_search.cpp.o"
   "/home/karinepcdc/Documentos/search-algorithms/src/timing_search.cpp" "/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles/search.dir/src/timing_search.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

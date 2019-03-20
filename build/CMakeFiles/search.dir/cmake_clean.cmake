@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/search.dir/src/iterative_binary_search.cpp.o"
   "CMakeFiles/search.dir/src/recursive_binary_search.cpp.o"
   "CMakeFiles/search.dir/src/iterative_ternary_search.cpp.o"
+  "CMakeFiles/search.dir/src/recursive_ternary_search.cpp.o"
   "CMakeFiles/search.dir/src/jump_search.cpp.o"
   "CMakeFiles/search.dir/src/timing_search.cpp.o"
   "search.pdb"
