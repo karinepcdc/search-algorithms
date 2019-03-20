@@ -1,7 +1,7 @@
 #include <iostream> // NULL; std::cout;
 
 //=== Alias
-using value_type = int ; //!< Simple alias to help code maintenance.
+using value_type = long int ; //!< Simple alias to help code maintenance.
 
 /// Recursive part of bsearch_rec()
 /*! 

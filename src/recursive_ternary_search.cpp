@@ -1,7 +1,7 @@
 #include <iostream>
 
 //=== Alias
-using value_type = int ; //!< Simple alias to help code maintenance.
+using value_type = long int ; //!< Simple alias to help code maintenance.
 
 
 /// Recursive part of tsearch_rec()
