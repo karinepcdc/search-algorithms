@@ -28,15 +28,20 @@ long int * sampleArray(int step){
 int main(int argc, char *argv[]){
 
   long int V_size = 1000000;
-  long int *V = new long int[V_size];
-  long int *sample_end=NULL; // pointer to V sample end
-  int Nsamples{0}, sample_isize{0}, sample_step{0}; // define number of samples
+  value_type *V = new value_type[V_size];  // vector of samples
+  value_type *sample_end=NULL;      // pointer to V sample end
+  int Nsamples{0}, sample_isize{0}; // number of samples and initial sample size
+  long int sample_step{0};          // define samples growth
 
-  double t_mean;
+  double t_mean; // average execution time
+
+  // pointer to the different search algorithms functions 
+  const value_type * (*call_seach_alg[])( const value_type *, const value_type *, value_type) 
+    = {lsearch, bsearch_it, bsearch_rec};
 
   enum Algorithms {LSEARCH, BSEARCH_IT, BSEARCH_REC};
   std::string name_alg[]={"linear search","binary search (iterative)", "binary search (recursive)"};
-  Algorithms search_alg;  
+  Algorithms sel_alg;  
 
   if(argc < 4) {
     std::cout << ">>> [Error] Provide: initial sample size; number of samples; search algorithm.\n";
@@ -62,9 +67,9 @@ int main(int argc, char *argv[]){
   else if(!(convert2 >> Nsamples))
     Nsamples = 100;
   else if(!(convert3 >> num))
-    search_alg = LSEARCH; 
+    num = 0; // LSEARCH 
 
-  search_alg=static_cast<Algorithms>(num);
+  sel_alg=static_cast<Algorithms>(num);
   
 
   sample_step=(V_size - sample_isize)/Nsamples; 
@@ -79,7 +84,7 @@ int main(int argc, char *argv[]){
   }
   
   // Measuring execution time of each search methold
-  std::cout << ">>> Doing " << name_alg[search_alg] << "\n *** number of samples: "<< Nsamples << " ***\n";
+  std::cout << ">>> Doing " << name_alg[sel_alg] << "\n *** number of samples: "<< Nsamples << " ***\n";
 
   // open file to register data
   std::ofstream datafile("../plots/data/lsearch_time.dat", std::ofstream::out);
@@ -101,7 +106,7 @@ int main(int argc, char *argv[]){
       // measure execution time
       auto start = std::chrono::high_resolution_clock::now();
       // checking wost case: searching element that is outside range
-      lsearch(V, sample_end, *(sample_end-1) + 1); 
+      (*call_seach_alg[sel_alg])(V, sample_end, *(sample_end-1) + 1); 
       auto stop = std::chrono::high_resolution_clock::now();
   
       auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
