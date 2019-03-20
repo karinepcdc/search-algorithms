@@ -51,7 +51,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/karinepcdc/Documentos/search-algorithms
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/karinepcdc/Documentos/search-algorithms/build
+CMAKE_BINARY_DIR = /home/karinepcdc/Documentos/search-algorithms/buildtest
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles /home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karinepcdc/Documentos/search-algorithms/buildtest/CMakeFiles /home/karinepcdc/Documentos/search-algorithms/buildtest/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karinepcdc/Documentos/search-algorithms/buildtest/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named search
+# Target rules for targets named search_tests
 
 # Build rule for target.
-search: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 search
-.PHONY : search
+search_tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 search_tests
+.PHONY : search_tests
 
 # fast build rule for target.
-search/fast:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/build
-.PHONY : search/fast
+search_tests/fast:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/build
+.PHONY : search_tests/fast
 
 src/iterative_binary_search.o: src/iterative_binary_search.cpp.o
 
@@ -129,7 +129,7 @@ src/iterative_binary_search.o: src/iterative_binary_search.cpp.o
 
 # target to build an object file
 src/iterative_binary_search.cpp.o:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/iterative_binary_search.cpp.o
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/iterative_binary_search.cpp.o
 .PHONY : src/iterative_binary_search.cpp.o
 
 src/iterative_binary_search.i: src/iterative_binary_search.cpp.i
@@ -138,7 +138,7 @@ src/iterative_binary_search.i: src/iterative_binary_search.cpp.i
 
 # target to preprocess a source file
 src/iterative_binary_search.cpp.i:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/iterative_binary_search.cpp.i
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/iterative_binary_search.cpp.i
 .PHONY : src/iterative_binary_search.cpp.i
 
 src/iterative_binary_search.s: src/iterative_binary_search.cpp.s
@@ -147,7 +147,7 @@ src/iterative_binary_search.s: src/iterative_binary_search.cpp.s
 
 # target to generate assembly for a file
 src/iterative_binary_search.cpp.s:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/iterative_binary_search.cpp.s
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/iterative_binary_search.cpp.s
 .PHONY : src/iterative_binary_search.cpp.s
 
 src/iterative_linear_search.o: src/iterative_linear_search.cpp.o
@@ -156,7 +156,7 @@ src/iterative_linear_search.o: src/iterative_linear_search.cpp.o
 
 # target to build an object file
 src/iterative_linear_search.cpp.o:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/iterative_linear_search.cpp.o
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/iterative_linear_search.cpp.o
 .PHONY : src/iterative_linear_search.cpp.o
 
 src/iterative_linear_search.i: src/iterative_linear_search.cpp.i
@@ -165,7 +165,7 @@ src/iterative_linear_search.i: src/iterative_linear_search.cpp.i
 
 # target to preprocess a source file
 src/iterative_linear_search.cpp.i:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/iterative_linear_search.cpp.i
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/iterative_linear_search.cpp.i
 .PHONY : src/iterative_linear_search.cpp.i
 
 src/iterative_linear_search.s: src/iterative_linear_search.cpp.s
@@ -174,7 +174,7 @@ src/iterative_linear_search.s: src/iterative_linear_search.cpp.s
 
 # target to generate assembly for a file
 src/iterative_linear_search.cpp.s:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/iterative_linear_search.cpp.s
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/iterative_linear_search.cpp.s
 .PHONY : src/iterative_linear_search.cpp.s
 
 src/iterative_ternary_search.o: src/iterative_ternary_search.cpp.o
@@ -183,7 +183,7 @@ src/iterative_ternary_search.o: src/iterative_ternary_search.cpp.o
 
 # target to build an object file
 src/iterative_ternary_search.cpp.o:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/iterative_ternary_search.cpp.o
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/iterative_ternary_search.cpp.o
 .PHONY : src/iterative_ternary_search.cpp.o
 
 src/iterative_ternary_search.i: src/iterative_ternary_search.cpp.i
@@ -192,7 +192,7 @@ src/iterative_ternary_search.i: src/iterative_ternary_search.cpp.i
 
 # target to preprocess a source file
 src/iterative_ternary_search.cpp.i:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/iterative_ternary_search.cpp.i
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/iterative_ternary_search.cpp.i
 .PHONY : src/iterative_ternary_search.cpp.i
 
 src/iterative_ternary_search.s: src/iterative_ternary_search.cpp.s
@@ -201,7 +201,7 @@ src/iterative_ternary_search.s: src/iterative_ternary_search.cpp.s
 
 # target to generate assembly for a file
 src/iterative_ternary_search.cpp.s:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/iterative_ternary_search.cpp.s
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/iterative_ternary_search.cpp.s
 .PHONY : src/iterative_ternary_search.cpp.s
 
 src/jump_search.o: src/jump_search.cpp.o
@@ -210,7 +210,7 @@ src/jump_search.o: src/jump_search.cpp.o
 
 # target to build an object file
 src/jump_search.cpp.o:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/jump_search.cpp.o
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/jump_search.cpp.o
 .PHONY : src/jump_search.cpp.o
 
 src/jump_search.i: src/jump_search.cpp.i
@@ -219,7 +219,7 @@ src/jump_search.i: src/jump_search.cpp.i
 
 # target to preprocess a source file
 src/jump_search.cpp.i:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/jump_search.cpp.i
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/jump_search.cpp.i
 .PHONY : src/jump_search.cpp.i
 
 src/jump_search.s: src/jump_search.cpp.s
@@ -228,7 +228,7 @@ src/jump_search.s: src/jump_search.cpp.s
 
 # target to generate assembly for a file
 src/jump_search.cpp.s:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/jump_search.cpp.s
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/jump_search.cpp.s
 .PHONY : src/jump_search.cpp.s
 
 src/recursive_binary_search.o: src/recursive_binary_search.cpp.o
@@ -237,7 +237,7 @@ src/recursive_binary_search.o: src/recursive_binary_search.cpp.o
 
 # target to build an object file
 src/recursive_binary_search.cpp.o:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/recursive_binary_search.cpp.o
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/recursive_binary_search.cpp.o
 .PHONY : src/recursive_binary_search.cpp.o
 
 src/recursive_binary_search.i: src/recursive_binary_search.cpp.i
@@ -246,7 +246,7 @@ src/recursive_binary_search.i: src/recursive_binary_search.cpp.i
 
 # target to preprocess a source file
 src/recursive_binary_search.cpp.i:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/recursive_binary_search.cpp.i
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/recursive_binary_search.cpp.i
 .PHONY : src/recursive_binary_search.cpp.i
 
 src/recursive_binary_search.s: src/recursive_binary_search.cpp.s
@@ -255,35 +255,62 @@ src/recursive_binary_search.s: src/recursive_binary_search.cpp.s
 
 # target to generate assembly for a file
 src/recursive_binary_search.cpp.s:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/recursive_binary_search.cpp.s
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/recursive_binary_search.cpp.s
 .PHONY : src/recursive_binary_search.cpp.s
 
-src/timing_search.o: src/timing_search.cpp.o
+src/recursive_ternary_search.o: src/recursive_ternary_search.cpp.o
 
-.PHONY : src/timing_search.o
+.PHONY : src/recursive_ternary_search.o
 
 # target to build an object file
-src/timing_search.cpp.o:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/timing_search.cpp.o
-.PHONY : src/timing_search.cpp.o
+src/recursive_ternary_search.cpp.o:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/recursive_ternary_search.cpp.o
+.PHONY : src/recursive_ternary_search.cpp.o
 
-src/timing_search.i: src/timing_search.cpp.i
+src/recursive_ternary_search.i: src/recursive_ternary_search.cpp.i
 
-.PHONY : src/timing_search.i
+.PHONY : src/recursive_ternary_search.i
 
 # target to preprocess a source file
-src/timing_search.cpp.i:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/timing_search.cpp.i
-.PHONY : src/timing_search.cpp.i
+src/recursive_ternary_search.cpp.i:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/recursive_ternary_search.cpp.i
+.PHONY : src/recursive_ternary_search.cpp.i
 
-src/timing_search.s: src/timing_search.cpp.s
+src/recursive_ternary_search.s: src/recursive_ternary_search.cpp.s
 
-.PHONY : src/timing_search.s
+.PHONY : src/recursive_ternary_search.s
 
 # target to generate assembly for a file
-src/timing_search.cpp.s:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/src/timing_search.cpp.s
-.PHONY : src/timing_search.cpp.s
+src/recursive_ternary_search.cpp.s:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/recursive_ternary_search.cpp.s
+.PHONY : src/recursive_ternary_search.cpp.s
+
+src/test_searching.o: src/test_searching.cpp.o
+
+.PHONY : src/test_searching.o
+
+# target to build an object file
+src/test_searching.cpp.o:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/test_searching.cpp.o
+.PHONY : src/test_searching.cpp.o
+
+src/test_searching.i: src/test_searching.cpp.i
+
+.PHONY : src/test_searching.i
+
+# target to preprocess a source file
+src/test_searching.cpp.i:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/test_searching.cpp.i
+.PHONY : src/test_searching.cpp.i
+
+src/test_searching.s: src/test_searching.cpp.s
+
+.PHONY : src/test_searching.s
+
+# target to generate assembly for a file
+src/test_searching.cpp.s:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/test_searching.cpp.s
+.PHONY : src/test_searching.cpp.s
 
 # Help Target
 help:
@@ -292,7 +319,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... search"
+	@echo "... search_tests"
 	@echo "... edit_cache"
 	@echo "... src/iterative_binary_search.o"
 	@echo "... src/iterative_binary_search.i"
@@ -309,9 +336,12 @@ help:
 	@echo "... src/recursive_binary_search.o"
 	@echo "... src/recursive_binary_search.i"
 	@echo "... src/recursive_binary_search.s"
-	@echo "... src/timing_search.o"
-	@echo "... src/timing_search.i"
-	@echo "... src/timing_search.s"
+	@echo "... src/recursive_ternary_search.o"
+	@echo "... src/recursive_ternary_search.i"
+	@echo "... src/recursive_ternary_search.s"
+	@echo "... src/test_searching.o"
+	@echo "... src/test_searching.i"
+	@echo "... src/test_searching.s"
 .PHONY : help
 
 

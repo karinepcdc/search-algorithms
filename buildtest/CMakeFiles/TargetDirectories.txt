@@ -1,0 +1,3 @@
+/home/karinepcdc/Documentos/search-algorithms/buildtest/CMakeFiles/rebuild_cache.dir
+/home/karinepcdc/Documentos/search-algorithms/buildtest/CMakeFiles/search_tests.dir
+/home/karinepcdc/Documentos/search-algorithms/buildtest/CMakeFiles/edit_cache.dir

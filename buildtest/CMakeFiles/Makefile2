@@ -62,42 +62,42 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/karinepcdc/Documentos/search-algorithms
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/karinepcdc/Documentos/search-algorithms/build
+CMAKE_BINARY_DIR = /home/karinepcdc/Documentos/search-algorithms/buildtest
 
 #=============================================================================
-# Target rules for target CMakeFiles/search.dir
+# Target rules for target CMakeFiles/search_tests.dir
 
 # All Build rule for target.
-CMakeFiles/search.dir/all:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/depend
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target search"
-.PHONY : CMakeFiles/search.dir/all
+CMakeFiles/search_tests.dir/all:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/depend
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/karinepcdc/Documentos/search-algorithms/buildtest/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target search_tests"
+.PHONY : CMakeFiles/search_tests.dir/all
 
 # Include target in all.
-all: CMakeFiles/search.dir/all
+all: CMakeFiles/search_tests.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/search.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/search.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/karinepcdc/Documentos/search-algorithms/build/CMakeFiles 0
-.PHONY : CMakeFiles/search.dir/rule
+CMakeFiles/search_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karinepcdc/Documentos/search-algorithms/buildtest/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/search_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karinepcdc/Documentos/search-algorithms/buildtest/CMakeFiles 0
+.PHONY : CMakeFiles/search_tests.dir/rule
 
 # Convenience name for target.
-search: CMakeFiles/search.dir/rule
+search_tests: CMakeFiles/search_tests.dir/rule
 
-.PHONY : search
-
-# clean rule for target.
-CMakeFiles/search.dir/clean:
-	$(MAKE) -f CMakeFiles/search.dir/build.make CMakeFiles/search.dir/clean
-.PHONY : CMakeFiles/search.dir/clean
+.PHONY : search_tests
 
 # clean rule for target.
-clean: CMakeFiles/search.dir/clean
+CMakeFiles/search_tests.dir/clean:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/clean
+.PHONY : CMakeFiles/search_tests.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/search_tests.dir/clean
 
 .PHONY : clean
 
