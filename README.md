@@ -31,7 +31,7 @@ Full and detailed report (in portuguese) can be found on the 'report' directory.
 
 --------------------------------------------------
 --------------------------------------------------
-To compile project for the first time:
+To compile project for the first time follow the instructions:
 
 $ mkdir build
 $ cd build

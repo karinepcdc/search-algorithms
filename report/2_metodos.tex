@@ -15,7 +15,7 @@ Os algorítmos de buscas foram implementados na linguagem C++ e o compilador uti
 
 \section{Algoritmos}
 
-Os algoritmos de busca utilizados nesse estudo estão apresentados aqui com uma breve descrição. Os códigos utilizados encontram-se no apêndice 1. ????
+Dado um arranjo sequencial $V$, cujos elementos estão ordenado em {\it ordem crescente} (sem repetição) e um valor chave $k$, os algoritmos aqui descritos tem como objetivo retornar o índice da localização de $k$ em $V$, caso este valor não esteja presente no arranjo, devem retornar $-1$. Os códigos utilizados no estudo baseados nesses algoritmos encontram-se no apêndice 1. ????
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,6 +35,7 @@ Os algoritmos de busca utilizados nesse estudo estão apresentados aqui com uma 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Busca linear}
 
+A busca linear varre o arranjo do primeiro ao último elemento comparando, a cada passo da varredura, o valor selecionado no arranjo com a chave procurada. Se encontrar a chave interrompe a busca e retorna o índice atual, senão, a varredura continua até o fim do arranjo. Seu pior caso por tanto, é quando o valor procurado é maior ou igual ao último elemento do arranjo.
 
 \begin{algorithm}[H]
   \DontPrintSemicolon
@@ -61,6 +62,8 @@ Os algoritmos de busca utilizados nesse estudo estão apresentados aqui com uma 
 
 
 \subsection{Busca binária}
+
+Na busca binária, particiona-se o arranjo em dois, selecionando o elemento do meio. Caso este seja igual ao valor procurado, interrompe-se a busca retornado o valor do índice encontrado, caso contrário, uma comparação é feita a fim de determinar se o valor é maior ou menor do que o elemento selecionado, determinando assim em qual metade deve-se fazer a busca novamente. A nova busca repete o mesmo procedimento descrito anteriormente até que o elemento seja encontrado ou, caso a partição analizada seja igual a zero e o valor não tiver sido encontrado, o algoritmo retorna $-1$. O pior caso é aquele em que $k$ não pertence ao arranjo ou é o último elemento buscado.
 
 \begin{algorithm}[H]
   \DontPrintSemicolon
@@ -124,6 +127,8 @@ Os algoritmos de busca utilizados nesse estudo estão apresentados aqui com uma 
 
 
 \subsection{Busca ternária}
+
+A busca ternário se assemelha a busca binária, com a diferença que divide o arranjo em 3 partes, selecionando o maior elemento do primeiro terço do arranjo $t_1$ e o maior do segundo terço $t_2$. Em seguida, verifica-se se algum desses elementos é o valor procurado $k$. Caso seja, retorna o índice do elemento no arranjo, caso não, realiza-se o mesmo procedimento no terço que possivelmente contém o valor procurado, ou seja, se $k<t_1$, faz-se a busca ternária no primeiro terço, se $t_1<k<t_2$ busca-se no segundo terço, senão a busca é feita no último terço. Novamente o pior caso é aquele em que $k$ não pertence ao arranjo ou é o último elemento buscado.
 
 \begin{algorithm}[H]
   \DontPrintSemicolon
@@ -199,6 +204,8 @@ Os algoritmos de busca utilizados nesse estudo estão apresentados aqui com uma 
 
 \subsection{{\it Jump search}}
 
+Na {\it Jump search}, uma varredura em saltos de tamanho $m$ ($0< m < n$, com $n$ o tamanho do vetor) é realizada. Na primeira iteração, compara-se o $m$-ésimo elemento ao valor buscado, caso seja igual, retorna-se $m$, se for menor, uma busca linear é realizada neste bloco do arranjo, caso contrário, a varredura passa para o $(m+1)$-ésimo elemento onde se procede da mesma maneira. Caso a busca chegue ao último elemento do vetor sem encontrar o valor chave, o valor de retorno é $-1$. Aqui o pior caso é quando o valor procurado é maior ou igual ao último elemento do arranjo.
+
 \begin{algorithm}[H]
   \DontPrintSemicolon
   \SetAlgoLined
@@ -237,6 +244,7 @@ Os algoritmos de busca utilizados nesse estudo estão apresentados aqui com uma 
 
 \subsection{Busca de Fibonacci}
 
+A busca de Fibonacci procede da mesma forma que a busca binária, mas particiona o arranjo em duas partes de tamanho diferente. O tamanho da primeira partição é o menor número da série de Fibonacci $F(i)$ tal que o tamanho do arranjo $n$ é maior ou igual a $Fib(i+2)$. O pior caso é aquele em que $k$ não pertence ao arranjo ou é o último elemento buscado. ????
 
 \begin{algorithm}[H]
   \DontPrintSemicolon
@@ -297,17 +305,28 @@ Os algoritmos de busca utilizados nesse estudo estão apresentados aqui com uma 
 
 \section{Cenários das simulações}
 
-As simulações foram feitas buscando um valor em um conjunto {\it ordenado crescente}. Consideramos o pior caso apenas, ou seja a busca de um valor que não pertence ao conjunto de busca, mas que é maior que o maior elemento neste conjunto.
+As simulações foram feitas buscando um valor em um conjunto {\it ordenado crescente}. Consideramos o pior caso apenas. Portanto, para todos os algoritmos selecionados, podemos escolher como pior caso a busca de um valor que não pertence ao conjunto de busca e é maior que o maior elemento neste conjunto.
 
 \section{metodologia}
 %% descrição do método ou procedimento empregado para gerar os dados do experimento, quais e como as medições foram tomadas para comparar os algoritmo (tempos, passos, memória)...
 
-Um vetor de inteiros longos de tamanho $10^8$ preenchido com números pares em ordem crescente foi utilizado para gerar as amostras.
+Para comparar os diferentes algoritmos de busca, simulações do tempo de execução para diferentes tamanhos de arranjos de entrada foram feitas. Também para análisar a diferença entre a implementação iterativa e recursiva do algoritmo ....???? foram feitas simulações medindo o número de passos da operação dominante. 
 
-Amostras de arranjo
+
+Um vetor de inteiros longos de tamanho $10^8$ preenchido com números pares em ordem crescente foi utilizado para gerar as amostras. 
+
+50 amostras do vetor foram utilizadas com tamanhos variando de 100 até $10^8$, com crescimento linear. ????
 
 \subsection{Simulações de tempo de execução}
 
-média temporal progressiva...
+Utilizou-se a biblioteca Chronos com precisão de microsegundos para medir o tempo antes e depois da execução de cada algoritmo de busca.
+
+Para suavizar as flutuações temporais, o tempo levado em cada amostra foi medido 100 vezes e apenas a média progressiva foi registrada. A fórmula da média temporal progressiva foi utilizada para evitar erros de arredondamento e é dada pela seguinte fórmula recusiva:
+\begin{eqnarray}
+&&M_0 = 0, \nonumber \\
+&&M_k = M_{k-1} + \frac{x_k-M_{k-1}}{k},
+\end{eqnarray}
+onde $x_k$ é o tempo mensurado para a $k$-ésima execução e $M_{k=m}$ corresponde a média aritmética.
+
 
 \subsection{Simulações do número de passos da operação dominante}
