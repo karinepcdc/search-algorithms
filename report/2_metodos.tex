@@ -1,13 +1,22 @@
 \chapter{Metodologia}
 
-Neste capítulo descrevemos ...
+Nesta seção descrevemos os materiais e a metodologia utilizados para obteção dos resultados apresentados no capítulo 3.
 
-\section{Caracterização técnica do computador}
+\section{Características técnicas}
 
-O computador utilizado possui as seguintes características:
-
+Os algorítmos de buscas foram implementados na linguagem C++ e o compilador utilizado foi o g++ (tipo e versão????). O computador onde as simulações foram realizadas possui as seguintes características:
+\begin{itemize}
+\item[-] MacBook Pro (2014)
+\item[-] Processador: 2.5 Ghz Intel Core i7
+\item[-] memória: 16 GB 1600 MHz DDR3
+\item[-] Placa mãe: ????
+\item[-] Sistema operaciona: (tipo e versão????)
+\end{itemize}
 
 \section{Algoritmos}
+
+Os algoritmos de busca utilizados nesse estudo estão apresentados aqui com uma breve descrição. Os códigos utilizados encontram-se no apêndice 1. ????
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Algorithm2e codes %%%
@@ -26,6 +35,7 @@ O computador utilizado possui as seguintes características:
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Busca linear}
 
+
 \begin{algorithm}[H]
   \DontPrintSemicolon
   \SetAlgoLined
@@ -38,7 +48,7 @@ O computador utilizado possui as seguintes características:
 
   \Fnc{\buscaLin{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
     {\bf var} $i$: {\bf inteiro} \;
-    \Enqto{$i \leftarrow l \; \Ate \; r$}{
+    \Para{$i \leftarrow l \; \Ate \; r$}{
       \Se{$\vet{i} \; == \; k$}{
         \Retorna{$i$}
       }       
@@ -212,7 +222,7 @@ O computador utilizado possui as seguintes características:
       }\SenaoSe{$k \; < \;\vet{m}$}{
         \Retorna{\buscaLin{$\vet,m-p,m-1,k$}}
       }
-      $m = m + p$
+      $m \leftarrow m + p$
     }
 
     \Se{$m>r$ \E $\vet{r} > k$}{
@@ -232,14 +242,54 @@ O computador utilizado possui as seguintes características:
   \DontPrintSemicolon
   \SetAlgoLined
   \caption{Busca de Fibonacci}
-
   \Entrada{Vetor $V$, chave $k$ e limites de busca esquerdo $l$ e direito $r$ (inclusive).}
   \Saida{Índice da ocorrência de $k$ em $V$; ou $-1$ caso não exista $k$ em $V$.}
   \tcc{Precondição: $l \leq r$; $l,r \geq 0$; $V$ em ordem crescente.}  
   \BlankLine
 
   \Fnc{\buscaBin{$V$: {\bf arranjo de inteiros}; $l$: {\bf inteiro}; $r$: {\bf inteiro}; $k$: {\bf inteiro}}: {\bf inteiro}}{
+    {\bf var} $size$: {\bf inteiro}\;
+    {\bf var} $i$: {\bf inteiro}\;
+    {\bf var} $i_{fib1}$: {\bf inteiro}\;
+    {\bf var} $fib1$: {\bf inteiro}\;
+    {\bf var} $Fib$: {\bf arranjo de inteiros}\;
 
+    $size \leftarrow r-l+1$\;
+
+    \tcc{Calcula a serie de Fibonacci até o i-ésimo termo,\; onde F(i) <= size}
+    $Fib[0] \leftarrow 0$\;
+    $Fib[1] \leftarrow 1$\;
+
+    $i \leftarrow 1$\;
+    \Enqto{ $Fib[i] < size$}{
+      $i \leftarrow i + 1$\;
+      $Fib[i] \leftarrow Fib[i-1] + Fib[i-2]$\;
+    }\;
+    
+    $i_{fib1} \leftarrow i-2$\;
+    \Enqto{$l<r$}{
+      
+      $fib1 \leftarrow l + F[i_{fib1}]$\;
+      \uSe{$k == V[fib1]$}{
+        \Retorna $fib1$\;
+      } \uSenaoSe{$k < V[fib1]$}{ \tcc{Novos tamanhos das partições à esquerda}
+        $r\leftarrow i_{fib1}-1$\;
+        $i_{fib1} = i_{fib1}-2$\;
+        \Se{$i_{fib1}<0$}{
+          $i_{fib1}\leftarrow 0$\;
+        }
+      } \Senao{ \tcc{Procure os novos tamanhos das partições à direita}
+        $l\leftarrow i_{fib1}+1$\;
+        $i \leftarrow  \; i_{fib1}+1$\;
+        \Enqto{$Fib[i] < r-l+1$}{
+            $i \leftarrow i - 1$\;
+        }
+        $i_{fib1} = i-1$\;
+        }
+        
+      }  
+      
+    
     \Retorna{$-1$}
   }
 \end{algorithm}
@@ -247,9 +297,14 @@ O computador utilizado possui as seguintes características:
 
 \section{Cenários das simulações}
 
-Amostras de arranjo
+As simulações foram feitas buscando um valor em um conjunto {\it ordenado crescente}. Consideramos o pior caso apenas, ou seja a busca de um valor que não pertence ao conjunto de busca, mas que é maior que o maior elemento neste conjunto.
+
+\section{metodologia}
+%% descrição do método ou procedimento empregado para gerar os dados do experimento, quais e como as medições foram tomadas para comparar os algoritmo (tempos, passos, memória)...
 
 Um vetor de inteiros longos de tamanho $10^8$ preenchido com números pares em ordem crescente foi utilizado para gerar as amostras.
+
+Amostras de arranjo
 
 \subsection{Simulações de tempo de execução}
 
