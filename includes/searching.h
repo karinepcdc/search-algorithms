@@ -28,4 +28,8 @@ const value_type * tsearch_recursivePart( const value_type *, const value_type *
 // jump search
 const value_type * jumpsearch(const value_type *, const value_type *, value_type);
 
+// fibonacci search
+const value_type * fibsearch(const value_type *, const value_type *, value_type);
+
+
 #endif

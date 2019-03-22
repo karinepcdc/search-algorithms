@@ -123,6 +123,33 @@ search_tests/fast:
 	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/build
 .PHONY : search_tests/fast
 
+src/fibonacci_search.o: src/fibonacci_search.cpp.o
+
+.PHONY : src/fibonacci_search.o
+
+# target to build an object file
+src/fibonacci_search.cpp.o:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/fibonacci_search.cpp.o
+.PHONY : src/fibonacci_search.cpp.o
+
+src/fibonacci_search.i: src/fibonacci_search.cpp.i
+
+.PHONY : src/fibonacci_search.i
+
+# target to preprocess a source file
+src/fibonacci_search.cpp.i:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/fibonacci_search.cpp.i
+.PHONY : src/fibonacci_search.cpp.i
+
+src/fibonacci_search.s: src/fibonacci_search.cpp.s
+
+.PHONY : src/fibonacci_search.s
+
+# target to generate assembly for a file
+src/fibonacci_search.cpp.s:
+	$(MAKE) -f CMakeFiles/search_tests.dir/build.make CMakeFiles/search_tests.dir/src/fibonacci_search.cpp.s
+.PHONY : src/fibonacci_search.cpp.s
+
 src/iterative_binary_search.o: src/iterative_binary_search.cpp.o
 
 .PHONY : src/iterative_binary_search.o
@@ -321,6 +348,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... search_tests"
 	@echo "... edit_cache"
+	@echo "... src/fibonacci_search.o"
+	@echo "... src/fibonacci_search.i"
+	@echo "... src/fibonacci_search.s"
 	@echo "... src/iterative_binary_search.o"
 	@echo "... src/iterative_binary_search.i"
 	@echo "... src/iterative_binary_search.s"

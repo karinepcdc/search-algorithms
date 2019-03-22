@@ -281,13 +281,13 @@ A busca de Fibonacci procede da mesma forma que a busca binária, mas particiona
       \uSe{$k == V[fib1]$}{
         \Retorna $fib1$\;
       } \uSenaoSe{$k < V[fib1]$}{ \tcc{Novos tamanhos das partições à esquerda}
-        $r\leftarrow i_{fib1}-1$\;
+        $r\leftarrow fib1-1$\;
         $i_{fib1} = i_{fib1}-2$\;
         \Se{$i_{fib1}<0$}{
           $i_{fib1}\leftarrow 0$\;
         }
       } \Senao{ \tcc{Procure os novos tamanhos das partições à direita}
-        $l\leftarrow i_{fib1}+1$\;
+        $l\leftarrow fib1+1$\;
         $i \leftarrow  \; i_{fib1}+1$\;
         \Enqto{$Fib[i] < r-l+1$}{
             $i \leftarrow i - 1$\;

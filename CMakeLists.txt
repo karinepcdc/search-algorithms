@@ -17,18 +17,23 @@ set(SOURCES
 	src/iterative_ternary_search.cpp
 	src/recursive_ternary_search.cpp
 	src/jump_search.cpp
-	src/timing_search.cpp
+	src/fibonacci_search.cpp
+	src/test_searching.cpp
+
 )
 #src/timing_search.cpp
 #src/test_searching.cpp
 
 # Add executables with the above sources 
-add_executable( search ${SOURCES})
-#add_executable( search_tests ${SOURCES})
+#add_executable( search ${SOURCES})
 
 #define C++11 as the standard.
-target_compile_features(search PUBLIC cxx_std_11)
+#target_compile_features(search PUBLIC cxx_std_11)
 
 # Test target ==========================
 
-#target_compile_features(search_tests PUBLIC cxx_std_11)
+# Add executables with the above sources 
+add_executable( search_tests ${SOURCES})
+
+#define C++11 as the standard.
+target_compile_features(search_tests PUBLIC cxx_std_11)
