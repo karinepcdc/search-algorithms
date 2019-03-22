@@ -4,28 +4,31 @@ Os resultados obtidos com as simulações estão descrito abaixo.
 
 \section{Busca linear}
 
-Na figura abaixo temos o resultado da simulação do algoritmo de busca linear em arranjos sequenciais de tamanhos diferentes, onde o tempo de execução médio foi medido. Fazendo um ajuste dos pontos da curva conseguimos determinar que o comportamento assintótico é linear.
+Na figura abaixo está o resultado da simulação do algoritmo de busca linear em arranjos sequenciais de tamanhos diferentes, onde o tempo de execução médio foi medido. Fazendo um ajuste dos pontos da curva conseguimos determinar que o comportamento assintótico é linear.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=1.2]{../plots/lsearch_time.pdf}
- \caption{Comportamento assintótico da busca linear em relação ao tempo de execução médio (em milisegundos) a medida que o tamanho do arranjo sequencial $N$ aumenta.}
-\end{figure} \label{fig:lseach_time}
+  \caption{Comportamento assintótico da busca linear em relação ao tempo de execução médio (em milisegundos) a medida que o tamanho do arranjo sequencial $N$ aumenta.}
+  \label{fig:lseach_time}
+\end{figure} 
 
 
 \section{Busca binária}
 
-Os resultado da simulação do algoritmo de busca binária em suas versões iterativa e recursiva em arranjos sequenciais de tamanhos diferentes seguem abaixo. Fazendo um ajuste dos pontos da curva de ambas as implementações conseguimos determinar que o comportamento é logarítmico.
+Os resultados da simulação do algoritmo de busca binária em suas versões iterativa e recursiva em arranjos sequenciais de tamanhos diferentes seguem abaixo. Fazendo um ajuste dos pontos da curva de ambas as implementações conseguimos determinar que o comportamento é logarítmico.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=1.2]{../plots/bsearch_it_time.pdf}
   \caption{Comportamento assintótico da implementação iterativa da busca binária em relação ao tempo de execução médio (medido em nanosegundos).}
-\end{figure} \label{fig:bseach_it_time}
+   \label{fig:bseach_it_time}
+\end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=1.2]{../plots/bsearch_rec_time.pdf}
   \caption{Comportamento assintótico da implementação recursiva da busca binária em relação ao tempo de execução médio (medido em nanosegundos).}
-\end{figure} \label{fig:bseach_rec_time}
+  \label{fig:bseach_rec_time}
+\end{figure} 
 
 
 \section{Busca ternária}
@@ -34,14 +37,16 @@ Nesta subseção, apresentamos os gráficos de tempo de execução em função d
 \begin{figure}[H]
   \centering
   \includegraphics[scale=1.2]{../plots/tsearch_it_time.pdf}
-%  \caption{Tempo vs...}
-\end{figure} \label{fig:tseach_it_time}
+  \caption{Comportamento assintótico da implementação iterativa da busca ternária em relação ao tempo de execução médio (medido em nanosegundos).}
+  \label{fig:tseach_it_time}
+\end{figure} 
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=1.2]{../plots/tsearch_rec_time.pdf}
-%  \caption{Tempo vs...}
-\end{figure} \label{fig:tseach_rec_time}
+  \caption{Comportamento assintótico da implementação recursiva da busca ternária em relação ao tempo de execução médio (medido em nanosegundos).}
+ \label{fig:tseach_rec_time}
+\end{figure}
 
 \section{{\it Jump search}}
 
@@ -49,7 +54,8 @@ Na figura abaixo temos o resultado da simulação do algoritmo {\it jump search}
 \begin{figure}[H]
   \centering
   \includegraphics[scale=1.2]{../plots/jumpsearch_time.pdf}
-%  \caption{Comportamento assintótico da {\it jump search} em relação ao tempo de execução médio (medido em milisegundos) a medida que o tamanho do arranjo sequencial $N$ aumenta.}
-\end{figure} \label{fig:jumpsearch_time}
+  \caption{Comportamento assintótico da {\it jump search} em relação ao tempo de execução médio (medido em milisegundos) a medida que o tamanho do arranjo sequencial $N$ aumenta.}
+  \label{fig:jumpsearch_time}
+\end{figure} 
 
-\section{Busca de Fibonacci}
+%\section{Busca de Fibonacci}

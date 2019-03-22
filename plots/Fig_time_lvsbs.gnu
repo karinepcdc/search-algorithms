@@ -11,10 +11,10 @@ TITLE = "Linear vs Jump search: Execution Time analysis" ##TITLE##
 #set title TITLE offset char 0, char -0.2
 
 ##set nokey   #set key at 0.04,2
-set key r left top noinvert samplen 1 spacing 3 width 2 height 0 
+set key r top left noinvert samplen 1 spacing 3 width 0 height 0 
 
 ##configure (x,y) coordinates
-set xtics 1000
+set xtics 500
 set mxtics 5
 set xrange [0:4000]
 set xlabel "\\Large{\\rotatebox{0}{Array size $N$}}" offset 0,0
@@ -35,8 +35,8 @@ FIT_LIMIT =1e-20
 #print a,b
 
 
-plot "data/lsearch_time.dat"   u 1:($2*1e-6)   t"linear" w lp lw 2 lt 1 lc 0 pt 3 ps 1, \
-      "data/bsearch_it_time.dat"   u 1:($2*1e-6)   t"binary (iterative)" w lp lw 2 lt 1 lc 2 pt 3 ps 1
+plot "data/lsearch_time_zoom.dat"   u 1:($2*1e-6)   t"linear" w lp lw 2 lt 1 lc 0 pt 3 ps 1, \
+      "data/bsearch_it_time_zoom.dat"   u 1:($2*1e-6)   t"binary (iterative)" w lp lw 2 lt 1 lc 2 pt 3 ps 1
 
 ##run latex figures
 set output 'fig.tex'

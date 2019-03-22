@@ -22,10 +22,7 @@ The goals of this project are:
     
     5. Are there different worst case categories for the Fibonacci search? (comparison between two worst case of Fibonacci search.)
     
-    6. Which algorithm better adapts to an out-of-core version?
-
-In order to answer theses questions test such and such were made...
-
+    
 --------------------------------------------------
 Full and detailed report (in portuguese) can be found on the 'report' directory. 
 
