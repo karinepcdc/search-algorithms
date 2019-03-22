@@ -21,7 +21,7 @@ set xlabel "\\Large{\\rotatebox{0}{Array size $N$}}" offset 0,0
 
 set ytics auto
 set mytics 5
-#set yrange [0:300]
+set yrange [0:800]
 set ylabel "\\Large{\\rotatebox{0}{Execution time $t$ (ns)}}" offset 1,0
 
 ##include labels
@@ -35,8 +35,8 @@ fit f(x) "data/bsearch_it_time.dat"  u 1:2 via a,b
 #print a,b
 
 
-plot "data/bsearch_it_time.dat"   u 1:2   t"" lt 0 lc 3 pt 2 ps 1.5, \
-     f(x) lt 1 lc 1
+plot "data/bsearch_it_time.dat"   u 1:2 t"" w lp lt 1 lc 0 pt 1 ps 1, \
+     f(x) t"f(x)= a*log(b*x)" lt 1 lw 2 lc 7
 
 
 ##run latex figures

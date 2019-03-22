@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/karinepcdc/Documentos/search-algorithms/src/fibonacci_search.cpp
+/Users/karine/prog/cpp/EDB1/search-algorithms/includes/searching.h
+
+/Users/karine/prog/cpp/EDB1/search-algorithms/src/test_searching.cpp
 iostream
 -
-vector
+algorithm
 -
+iterator
+-
+../includes/searching.h
+/Users/karine/prog/cpp/EDB1/search-algorithms/includes/searching.h
 

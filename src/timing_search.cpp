@@ -1,3 +1,10 @@
+/*!
+ * \file timing_search.cpp
+ * \brief Implementing search algorithms (linear, binary, ternary, jump and Fibonacci).
+ * \author Karine Piacentini
+ * \data March, 22th
+ */
+
 #include <iostream> // std::cout; std::endl; 
 #include <vector>   // std::begin; std::end; 
 #include <iterator> 
@@ -14,7 +21,6 @@ void maxVecTest() {
     std::vector<long int> v;
     std::cout << "Maximum long int vector size: " << v.max_size() << std::endl;
 }
-
 
 // return a vector filled in an ordered way with integers 
 long int * sampleArray(int step){
@@ -37,11 +43,11 @@ int main(int argc, char *argv[]){
 
   // pointer to the different search algorithms functions 
   const value_type * (*call_seach_alg[])( const value_type *, const value_type *, value_type) 
-    = {lsearch, bsearch_it, bsearch_rec, tsearch_it, tsearch_rec, jumpsearch};
+    = {lsearch, bsearch_it, bsearch_rec, tsearch_it, tsearch_rec, jumpsearch, fibsearch};
 
-  enum Algorithms {LSEARCH, BSEARCH_IT, BSEARCH_REC, TSEARCH_IT, TSEARCH_REC, JUMPSEARCH};
-  std::string name_alg[]={"linear search","binary search (iterative)", "binary search (recursive)", "ternary search (iterative)", "ternary search (recursive)", "Jump search"};
-  std::string name_file[]={"lsearch_time","bsearch_it_time", "bsearch_rec_time", "tsearch_it_time", "tsearch_rec_time", "jumpsearch_time"};
+  enum Algorithms {LSEARCH, BSEARCH_IT, BSEARCH_REC, TSEARCH_IT, TSEARCH_REC, JUMPSEARCH, FIBSEARCH};
+  std::string name_alg[]={"linear search","binary search (iterative)", "binary search (recursive)", "ternary search (iterative)", "ternary search (recursive)", "Jump search", "Fibonacci search"};
+  std::string name_file[]={"lsearch_time","bsearch_it_time", "bsearch_rec_time", "tsearch_it_time", "tsearch_rec_time", "jumpsearch_time", "fibsearch_time"};
   Algorithms sel_alg;  
 
   if(argc < 4) {
@@ -53,7 +59,8 @@ int main(int argc, char *argv[]){
 	      << BSEARCH_REC << " - Binary Search (recursive)\n"
       	      << TSEARCH_IT << " - Ternary Search (iterative)\n"
       	      << TSEARCH_REC << " - Ternary Search (recursive)\n"
-      	      << JUMPSEARCH << " - Jump Search"
+      	      << JUMPSEARCH << " - Jump Search\n"
+      	      << FIBSEARCH << " - Fibonacci Search"
 	      << std::endl;
 
     delete[] V;
@@ -131,6 +138,7 @@ int main(int argc, char *argv[]){
   }
   
   datafile.close();
+  std::cout << ">>> Done" << std::endl;
 
   delete[] V;
  

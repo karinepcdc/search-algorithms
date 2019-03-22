@@ -22,23 +22,22 @@ set xlabel "\\Large{\\rotatebox{0}{Array size $N$}}" offset 0,0
 set ytics auto
 set mytics 5
 #set yrange [0:200000]
-set ylabel "\\Large{\\rotatebox{0}{Execution time $t$ (ns)}}" offset 1,0
+set ylabel "\\Large{\\rotatebox{0}{Execution time $t$ (ms)}}" offset 1,0
 
 ##include labels
 #set label 1 "$U_0=0.0$"  at 0.52,0.4 front   ##LABEL1##
 
-f(x)= a*x**2+b
+f(x)= a*x+b
 #f(x)= a*log(b*x)
 
 FIT_LIMIT =1e-20
-fit f(x) "data/jumpsearch_time.dat"  u 1:2 via a,b
+fit f(x) "data/jumpsearch_time.dat"  u 1:($2*1e-6) via a,b
 
 #print a,b
 
 
-plot "data/jumpsearch_time.dat"   u 1:2   t"" lt 0 lc 3 pt 2 ps 1.5, \
-     f(x) lt 1 lc 1
-
+plot "data/jumpsearch_time.dat"   u 1:($2*1e-6)   t"" w lp lt 1 lc 0 pt 1 ps 1, \
+     f(x) t"f(x)= a*x+b" lt 1 lw 2 lc 7
 
 ##run latex figures
 set output 'fig.tex'
