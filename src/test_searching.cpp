@@ -449,6 +449,7 @@ int main()
     }
 
     // empty array
+    std::cout << "\n\n >>> Fibonacci search in an empty array..." << std::endl;
     {
       auto result = const_cast<value_type *>( fibsearch( std::begin(A), std::begin(A), 0 ) );
 
@@ -465,6 +466,7 @@ int main()
     }
 
     // size 1 array
+    std::cout << "\n\n >>> Fibonacci search in an singleton..." << std::endl;
     {
       auto result = const_cast<value_type *>( fibsearch( std::begin(A), &A[1], 0 ) );
 
@@ -481,6 +483,7 @@ int main()
     }
 
     // midle term missing
+    std::cout << "\n\n >>> Fibonacci search in an array with holes..." << std::endl;
     {
       auto result = const_cast<value_type *>( fibsearch( std::begin(B), std::end(B), 5 ) );
 
