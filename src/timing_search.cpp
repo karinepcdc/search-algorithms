@@ -124,7 +124,8 @@ int main(int argc, char *argv[]){
       // measure execution time
       auto start = std::chrono::high_resolution_clock::now();
       // checking wost case: searching element that is outside range
-      (*call_seach_alg[sel_alg])(V, sample_end, *(sample_end-1) + 1); 
+      //      (*call_seach_alg[sel_alg])(V, sample_end, *(sample_end-1) + 1);
+      (*call_seach_alg[sel_alg])(V, sample_end, -1); // best worst case cenario in fibonacci
       auto stop = std::chrono::high_resolution_clock::now();
   
       auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);

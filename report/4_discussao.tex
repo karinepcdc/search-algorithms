@@ -1,4 +1,4 @@
-pc\chapter{Discussão}
+\chapter{Discussão}
 
 Nesta seção, são analidos os resultados obtidos a fim de responder as perguntas que motivaram este estudo.
 
@@ -41,12 +41,12 @@ O segundo objetivo é determinar qual implementação é mais eficiente, se a re
 
 \section{Influência do tamanho da partição nos algoritmos de busca não lineares}
 
-Outra comparação interessante pode ser feita com os algoritmo de busca binária e ternária (figura \ref{fig:bvstvsfib_search_time}). Assim consegue-se verificar a influência do tamanho da partição nas buscas não lineares. Dos dados obtidos, pode-se concluir que a busca ternária é ligeiramente mais rápida que a binária.
+Outra comparação interessante pode ser feita com os algoritmo de busca binária, ternária e Fibonacci (figura \ref{fig:bvstvsfib_search_time}). Assim consegue-se verificar a influência do tamanho da partição nas buscas não lineares. Dos dados obtidos, pode-se concluir que a busca ternária é ligeiramente mais rápida que a binária e a de Fibonacci é muito mais lenta que ambas.
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=1.2]{../plots/bvstvsfib_search_time.pdf}
-  \caption{Comparação entre algoritmos (versões iterativas) com diferentes tamanhos de partições: binário (preto) e ternário (azul).}
+  \caption{Comparação entre algoritmos (versões iterativas) com diferentes tamanhos de partições: binário (preto), ternário (azul) e Fibonacci (vermelho).}
   \label{fig:bvstvsfib_search_time}
 \end{figure} 
 
@@ -62,12 +62,19 @@ Como pode ser verificado na seção de resultados, para tamanhos grandes do arra
   \label{fig:lvsb_search_time}
 \end{figure} 
 
-%\section{Cenários do algoritmo de Fibonacci}
-%
-%Por fim, o quinto objetivo procura determinar se existe diferentes categorias de cenários de pior caso para o algoritmo de busca de Fibonacci.
-%
-%\begin{figure}[H]
-%  \centering
-%  \includegraphics[scale=1.2]{../plots/lvsj_search_time.pdf}
-%%  \caption{Comportamento assintótico da {\it jump search} em relação ao tempo de execução médio (medido em milisegundos) a medida que o tamanho do arranjo sequencial $N$ aumenta.}
-%\end{figure} \label{fig:lvsj_search_time}
+\section{Cenários do algoritmo de Fibonacci}
+
+Por fim, o quinto objetivo procura determinar se existe diferentes categorias de cenários de pior caso para o algoritmo de busca de Fibonacci. Para isso, dois cenários de pior caso foram simulados:
+\begin{itemize}
+\item Cenário 1: o elemento procurado não está no vetor mas possui um valor próximo dos elementos no começo do arranjo (gráfico em preto na figura \ref{fig:fib2wc_search_time});
+\item Cenário 2: o elemento procurado não está no vetor mas possui um valor próximo dos elementos no final do arranjo (gráfico em vermelho na figura \ref{fig:fib2wc_search_time});.
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1.2]{../plots/fib2wc_search_time.pdf}
+  \caption{Comparação entre dois cenários de pior caso do algoritmo de busca de Fibonacci. Em um cenário, o elemento procurado está fora do arranjo, mas próximo dos elementos de seu começo (em preto). No outro, o elemento procurado está fora do arranjo, mas próximo dos elementos do fim deste (em vermelho).}
+  \label{fig:fib2wc_search_time}
+\end{figure} 
+
+A figura \ref{fig:fib2wc_search_time} mostra que há uma ligeira diferença entre os dois, sendo o cenário 1 consistentemente mais rápido que o cenário 2. Deste modo, a conclusão é que há sim dois casos de pior cenário para o algoritmo de busca de Fibonacci, mas a diferença de performace é despresível.

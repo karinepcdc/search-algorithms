@@ -7,7 +7,7 @@ set terminal epslatex colour  10
 set output 'fig.eps'
 #set print 'fitpar.dat'   #set print file
 
-TITLE = "Comparison btw Binary search recursive and iterative: Execution Time analysis" ##TITLE##
+TITLE = "Comparison btw binary, ternary and Fibonacci search (iterative vs): Execution Time analysis" ##TITLE##
 #set title TITLE offset char 0, char -0.2
 
 ##set nokey   #set key at 0.04,2
@@ -21,7 +21,7 @@ set xlabel "\\Large{\\rotatebox{0}{Array size $N$}}" offset 0,0
 
 set ytics auto
 set mytics 5
-set yrange [0:800]
+set yrange [0:5000]
 set ylabel "\\Large{\\rotatebox{0}{Execution time $t$ (ns)}}" offset 1,0
 
 ##include labels
@@ -36,7 +36,8 @@ FIT_LIMIT =1e-20
 
 
 plot "data/bsearch_it_time_full.dat"   u 1:2   t"binary (iterative)" w lp lt 1 lc 0 pt 1 ps 1, \
-     "data/tsearch_it_time_full.dat"   u 1:2 t"ternary (iterative)" w lp lt 1 lc 7 pt 4 ps 1
+     "data/tsearch_it_time_full.dat"   u 1:2 t"ternary (iterative)" w lp lt 1 lc 6 pt 7 ps 0.7, \
+     "data/fibsearch_time_full.dat"   u 1:2 t"Fibonacci (iterative)" w lp lt 1 lc 7 pt 4 ps 1
 
 ##run latex figures
 set output 'fig.tex'

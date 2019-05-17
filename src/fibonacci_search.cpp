@@ -33,7 +33,6 @@ const value_type * fibsearch(const value_type *first, const value_type *last, va
     
   while(first < last){
     fib1 = first + Fib[i_fib1] -1;
-    std::cout << "first: " << *first << "; last: " << *last << "; fib1: " << *fib1 << std::endl;
     
     if(value == *fib1){
       return fib1;

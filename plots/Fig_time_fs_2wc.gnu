@@ -7,7 +7,7 @@ set terminal epslatex colour  10
 set output 'fig.eps'
 #set print 'fitpar.dat'   #set print file
 
-TITLE = "Fibonacci search results: Execution Time analysis" ##TITLE##
+TITLE = "Fibonacci search: Comparison btw two worst case scenario" ##TITLE##
 #set title TITLE offset char 0, char -0.2
 
 ##set nokey   #set key at 0.04,2
@@ -30,13 +30,13 @@ set ylabel "\\Large{\\rotatebox{0}{Execution time $t$ (ns)}}" offset 1,0
 f(x)= a*log(b*x)
 
 FIT_LIMIT =1e-20
-fit f(x) "data/fibsearch_time_full.dat"  u 1:2 via a,b
+#fit f(x) "data/fibsearch_time_full.dat"  u 1:2 via a,b
 
 #print a,b
 
 
-plot "data/fibsearch_time_full.dat"   u 1:2   t"" w lp lt 1 lc 0 pt 1 ps 1, \
-     f(x) t"f(x)= a*log(b*x)" lt 1 lw 2 lc 7
+plot "data/fibsearch_time_wc1.dat"   u 1:2   t"valor antes do começo" w lp lt 1 lc 0 pt 1 ps 1, \
+     "data/fibsearch_time_full.dat"   u 1:2   t"valor depois do fim" w lp lt 1 lc 7 pt 1 ps 1
 
 
 ##run latex figures
@@ -47,7 +47,7 @@ set term x11
 !latex 'figure-gnuplot.tex'
 !dvipdf 'figure-gnuplot.dvi'
 !pdfcrop 'figure-gnuplot.pdf'    
-!mv figure-gnuplot-crop.pdf fibsearch_time.pdf ##FIGNAMEPDF##
+!mv figure-gnuplot-crop.pdf fib2wc_search_time.pdf ##FIGNAMEPDF##
 
 !rm figure-gnuplot.dvi fig.eps figure-gnuplot.aux figure-gnuplot.log fig.tex figure-gnuplot.pdf
 

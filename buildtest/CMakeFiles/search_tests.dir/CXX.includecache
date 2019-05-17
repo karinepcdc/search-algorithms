@@ -6,9 +6,43 @@
 
 #IncludeRegexTransform: 
 
-/Users/karine/prog/cpp/EDB1/search-algorithms/includes/searching.h
+/home/karinepcdc/Documentos/search-algorithms/includes/jump_search.h
+iostream
+-
+cmath
+-
 
-/Users/karine/prog/cpp/EDB1/search-algorithms/src/test_searching.cpp
+/home/karinepcdc/Documentos/search-algorithms/includes/searching.h
+
+/home/karinepcdc/Documentos/search-algorithms/src/fibonacci_search.cpp
+iostream
+-
+vector
+-
+
+/home/karinepcdc/Documentos/search-algorithms/src/iterative_binary_search.cpp
+iostream
+-
+
+/home/karinepcdc/Documentos/search-algorithms/src/iterative_linear_search.cpp
+
+/home/karinepcdc/Documentos/search-algorithms/src/iterative_ternary_search.cpp
+iostream
+-
+
+/home/karinepcdc/Documentos/search-algorithms/src/jump_search.cpp
+../includes/jump_search.h
+/home/karinepcdc/Documentos/search-algorithms/includes/jump_search.h
+
+/home/karinepcdc/Documentos/search-algorithms/src/recursive_binary_search.cpp
+iostream
+-
+
+/home/karinepcdc/Documentos/search-algorithms/src/recursive_ternary_search.cpp
+iostream
+-
+
+/home/karinepcdc/Documentos/search-algorithms/src/test_searching.cpp
 iostream
 -
 algorithm
@@ -16,5 +50,5 @@ algorithm
 iterator
 -
 ../includes/searching.h
-/Users/karine/prog/cpp/EDB1/search-algorithms/includes/searching.h
+/home/karinepcdc/Documentos/search-algorithms/includes/searching.h
 
