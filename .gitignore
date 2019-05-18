@@ -10,3 +10,10 @@
 # Executables
 *.exe
 *.out
+build/
+buildtest/
+
+# private files
+report/
+plots/
+diretivas_trabalho_analise_empirica.pdf
