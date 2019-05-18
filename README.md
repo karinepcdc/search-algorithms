@@ -18,7 +18,7 @@ The goals of this project are:
 5. Are there different worst case categories for the Fibonacci search? (comparison between two worst case of Fibonacci search.)    
     
 --------------------------------------------------
-Full and detailed report (in portuguese) can be found on the 'report' directory. 
+Full report (in portuguese) is available at 'report.pdf' file. 
 
 --------------------------------------------------
 --------------------------------------------------
